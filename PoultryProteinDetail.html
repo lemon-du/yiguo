@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="detail.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-- 顶部小字，可点击跳转链接 -->
+        <div class="crumbs">
+            <a href="">首页</a>>
+            <a href="">乳品糕点</a>>
+            <a href="">奶酪</a>> 百吉福棒棒奶酪缤纷莓子味120g
+        </div>
+        <!-- 中间图片及产品介绍 -->
+        <div class="content_goods">
+            <div class="product-intro clearfix">
+                <!-- 中间内容的左部分 -->
+                <div class="pic-preview clearfix">
+                    <!-- 大图 -->
+                    <div class="pic-big">
+                        <img  src="http://img14.yiguoimg.com/d/items/2019/190614/9288738262427342_500.jpg" alt="">
+                        <img hidden src="http://img14.yiguoimg.com/d/items/2019/190614/9288738262460110_500.jpg" alt="">
+                        <img hidden src="http://img13.yiguoimg.com/d/items/2019/190614/9288738262492878_500.jpg" alt="">
+                    </div>
+                    <!-- 可切换的小图 -->
+                    <div class="pic-thumb">
+                        <ul>
+                            <li><img src="http://img14.yiguoimg.com/d/items/2019/190614/9288738262427342_500.jpg" alt=""></li>
+                            <li><img src="http://img14.yiguoimg.com/d/items/2019/190614/9288738262460110_500.jpg" alt=""></li>
+                            <li><img src="http://img13.yiguoimg.com/d/items/2019/190614/9288738262492878_500.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 中间内容的右上部分 -->
+                <div class="product-info">
+                    <!-- 产品介绍 -->
+                    <div class="summary-name">
+                        <h1>百吉福棒棒奶酪缤纷莓子味120g</h1>
+                        <p>缤纷莓子口味   奶香浓郁  回味无穷</p>
+                    </div>
+                    <!-- 产品价格及评论 -->
+                    <div class="summary-price clearfix">
+                        <div class="pro-price">
+                            <div>
+                                <span class="tt">价格:</span>
+                                <span>
+                                    <em>¥</em>
+                                    <strong>19.80</strong>
+                                </span> 
+                            </div>
+                            <div class="pro-m2 clearfix">更多商品优惠，尽在易果生鲜APP
+                                 <p>
+                                    <i></i>
+                                    手机下单购买
+                                    <strong>立即扫码</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="pro-tel"> 
+                            <div class="code">
+                                <img src="data:img/png;base64,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" alt="">
+                            </div>
+                        </div>
+                        <div class="pro-review">
+                           <p>总体满意度</p>
+                           <p>
+                               <b>5.0</b>
+                               分
+                           </p>
+                           <p>
+                               <span>(评论数106)</span>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 中间内容的右下部分 -->
+                <div class="summary-other clearfix">
+                    <div class="left clearfix">
+                        <div class="choose clearfix">
+                            <div class="dt">规格：</div>
+                            <div class="dd">
+                                <div class="selected">
+                                    <a href="">
+                                        <span>￥19.80</span>
+                                        <span class="">120g/份</span>
+                                        <i></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pro-service">
+                            <i class="mr5">
+                                <img src="http://static01.yiguo.com/www/images/icon1.png" alt="">
+                            </i>
+                            不支持7天无理由退货
+                        </div>
+                        <div class="pro-amount clearfix">
+                            <div class="dt">数量:</div>
+                            <div class="dd clearfix">
+                                <div class="spinner clearfix">
+                                    <button class="increase">+</button>
+                                    <input id="p_number" class="spinner" type="text" maxlength="2" value="1">
+                                    <button class="decrease" disabled>-</button>
+                                </div>
+                                <div class="addcart">
+                                    <a href="">
+                                        <i></i>
+                                        加入购物车
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <table class="zx" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <th>原产地：</th>
+                                <td>天津</td>
+                            </tr>
+                            <tr>
+                                <th>商品编号：</th>
+                                <td>6000036392</td>
+                            </tr>
+                            <tr>
+                                <th>品牌：</th>
+                                <td>百吉福</td>
+                            </tr>
+                            <tr>
+                                <th>发货地：</th>
+                                <td>上海宝山</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_goods">
+            <!-- 产品评论、当季热卖 -->
+            <div class="fruit-main-con">
+                <!-- 当季热卖 -->
+                <div id="GetHotCommodity">
+                    <div class="hot-sale">
+                        <div class="hd">当季热卖</div>
+                        <div class="bd">
+                            <ul class="clearfix">
+                                <li>
+                                    <div class="p-img">
+                                        <a href="">
+                                            <img src="http://img14.yiguoimg.com/d/items/2019/190107/9288736492529191_300.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="p-name">
+                                        <a href="">养乐多活菌型乳酸菌乳饮品100ml*5</a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>¥12.90</strong>
+                                        <del>¥12.90</del>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="p-img">
+                                        <a href="">
+                                            <img src="http://img13.yiguoimg.com/d/items/2018/181019/9288732804949331_300.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="p-name">
+                                        <a href="">兰皇鸡蛋（10枚装）</a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>¥29.80</strong>
+                                        <del>¥29.80</del>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="p-img">
+                                        <a href="">
+                                            <img src="http://img09.yiguoimg.com/d/items/2018/180613/9288724483253453_300.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="p-name">
+                                        <a href="">美威欧式原味三文鱼排（2片装）250g</a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>¥62.90</strong>
+                                        <del>¥62.90</del>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="p-img">
+                                        <a href="">
+                                            <img src="http://img07.yiguoimg.com/e/web/170118/150234/170118150234302_1233566_300.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="p-name">
+                                        <a href="">澳洲谷饲小公牛雪花牛肉粒250g</a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>¥58.00</strong>
+                                        <del>¥58.00</del>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="p-img">
+                                        <a href="">
+                                            <img src="http://img07.yiguoimg.com/e/web/170508/095120/170508095120808_154370_300.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="p-name">
+                                        <a href="">崇明生态乳鸽300g</a>
+                                    </div>
+                                    <div class="p-price">
+                                        <strong>¥49.90</strong>
+                                        <del>￥49.90</del>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 产品评论及详情 -->
+                <div class="product-detail">
+                    <div class="detail-tab">
+                        <ul class="detail-ul clearfix">
+                            <li>
+                                <a class="active" href="javascript:void(0)">商品详情</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">用户评论<b>106</b></a>
+                            </li>
+                        </ul>
+                        <div class="addcart">
+                            <a href="">加入购物车</a>
+                        </div>
+                        <div class="shopping-cart">
+                            <dl>
+                                <dt class="shopping-btn">
+                                    <a href="javascript:void(0)">
+                                        <span class="totleNum">
+                                            <b>0</b>
+                                        </span>
+                                        <b class="totlePrice">0.0</b>
+                                    </a>
+                                </dt>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="detail-content">
+                        <!-- 商品详情 -->
+                        <div id="details" class="detail-item details clearfix">
+                            <div class="ProductAttribute">
+                                <table class="detail-table">
+                                    <tr>
+                                        <th>保质期（商品原标签标注）</th>
+                                        <td>180</td>
+                                    </tr>
+                                    <tr>
+                                        <th>商品状态</th>
+                                        <td>冷藏</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p>
+                                <img src="http://img11.yiguoimg.com/d/images/2019/190614/513691896528086734_880x700.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img09.yiguoimg.com/d/images/2019/190614/513691896528021198_880x1050.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img11.yiguoimg.com/d/images/2019/190614/513691896528053966_880x610.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img12.yiguoimg.com/d/images/2019/190614/513691896528119502_880x680.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img10.yiguoimg.com/d/images/2019/190614/513691896528152270_880x860.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img13.yiguoimg.com/d/images/2019/190614/513691896528185038_880x820.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img13.yiguoimg.com/d/images/2019/190614/513691896528217806_880x580.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img12.yiguoimg.com/d/images/2019/190614/513691896528250574_880x900.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img09.yiguoimg.com/d/images/2019/190614/513691896528283342_880x720.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img09.yiguoimg.com/d/images/2019/190614/513691896528316110_880x652.jpg" alt="">
+                            </p>
+                            <p>
+                                <img src="http://img13.yiguoimg.com/d/images/2017/171027/513691872596960091_1125x414.jpg" alt="" width="880">
+                            </p>
+                        </div>
+                        <!-- 用户评论 -->
+                        <div  style="display: none;" class="detail-item">
+                            <div class="comment-info clearfix">
+                                <div class="score">
+                                    总体满意度
+                                    <b>5.0
+                                        <span>分</span>
+                                    </b>(共有
+                                    <strong>106</strong>人评论)
+                                </div>
+                                <div class="percent clearfix">
+                                    <ul class="slip">
+                                        <li>
+                                            <b>好评</b>
+                                            <span style="width: 0%"></span>
+                                            <i>0%</i>
+                                        </li>
+                                        <li>
+                                            <b>中评</b>
+                                            <span style="width: 0%"></span>
+                                            <i>0%</i>
+                                        </li>
+                                        <li>
+                                            <b>差评</b>
+                                            <span style="width: 0%"></span>
+                                            <i>0%</i>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="comment-btn">
+                                        前5位评论用户可获得更高悠币奖励
+                                        <a class="btn-gn" href="javascript:void(0)">我要评论</a>
+                                        <p>只有购买过该商品的用户才能评论</p>
+                                </div>
+                            </div>
+                            <div class="comment-list">
+                                <div class="comment-tab-wrap clearfix">
+                                    <div class="comment-tab clearfix">
+                                        <span class="_votetype">
+                                            全部评论（<font id="vote_all">0</font>）
+                                        </span>
+                                        <span class="_votetype">
+                                            好评（<font id="vote_all">0</font>）      
+                                        </span>
+                                        <span class="_votetype">
+                                            中评（<font id="vote_all">0</font>）         
+                                        </span>
+                                        <span class="_votetype">
+                                            差评（<font id="vote_all">0</font>）  
+                                        </span>
+                                        <span class="_votetype">
+                                            有晒单（<font id="vote_all">0</font>）
+                                        </span>
+                                    </div>
+                                    <div class="extra">
+                                        <span class="">
+                                            <select name="" id="">
+                                                <option value="0">按默认</option>
+                                                <option value="1">按时间</option>
+                                            </select>
+                                        </span>
+                                        <span class="sort">
+                                            <label for="commenthascontent">
+                                                <input checked type="checkbox" id="commenthascontent">有内容
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="ProductCommentVote">
+                                    <div>
+                                        <div class="comment-con">
+                                            <p>暂无评论!</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <div class="comment-con">
+                                            <p>暂无评论!</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <div class="comment-con">
+                                            <p>暂无评论!</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <div class="comment-con">
+                                            <p>暂无评论!</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <div class="comment-con">
+                                            <p>暂无评论!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="detail.js"></script>
+</body>
+</html>
