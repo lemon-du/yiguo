@@ -18,7 +18,7 @@ $(function() {
             $(".side-guide").css({
                 position: "fixed",
                 top: "-40px",
-                left: left,
+               	left: left,
                 "z-index": 2
             })
             $(".recipe-guide a").eq(1).addClass("current").siblings().removeClass("current");
