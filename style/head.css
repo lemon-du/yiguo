@@ -1,7 +1,6 @@
 ﻿ /* 整体div */
  .yiguo-box {
     width: 100%;
-    height: 2000px;
 }
 /* 头部 top部分a标签鼠标经过效果 */
     .hover{
@@ -127,7 +126,6 @@
 .city {
     float: left;
     color: #008842;
-    position: relative;
     margin: 0px 10px 0px 0px;
 }
 .city-con-box {
