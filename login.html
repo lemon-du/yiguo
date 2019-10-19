@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/base.css">
+    <title>登录页面</title>
+</head>
+<body>
+    <div class="header">
+        <!-- 登录页面头部 -->
+        <div class="wrap">
+            <div class="logo clerarfix" >
+                <a href="javascript:void(0)"></a>
+                <span class="h-title">登录</span>
+            </div>
+        </div>
+    </div>
+    <div class="login">
+        <div class="wrap clearfix">
+            <form action="" method="GET">
+                <div class="loginBox">
+                    <div class="login-main">
+                        <p class="clearfix">
+                            <span class="signin-titL">欢迎登录</span>
+                            <span class="signin-titR">还没有账号?<a href="register.html">立即注册</a></span>
+                        </p>
+                        <div id="msg-wrap">
+                            <div></div>
+                        </div>
+                        <p>
+                            <i class="signin-icon input-phoneicon"></i>
+                            <input class="input input-phone" type="text" placeholder="邮箱/账号/已验证手机">
+                        </p>
+                        <p>
+                            <i class="signin-icon input-keyicon"></i>
+                            <input class="input input-key" type="password" placeholder="密码">
+                        </p>
+                        <p class="clearfix">
+                            <i class="signin-icon input-keyicon"></i>
+                            <input  class="input VerifyCode" type="text" placeholder="验证码">
+                            <span  class="codes logincode"></span>
+                            <a href="javascript:void(0);" class="tab">换一张</a>
+                        </p>
+                        <p class="clearfix">
+                            <label for="login-auto" id="auto">
+                                <input type="checkbox" id="login-auto" >自动登录
+                            </label>
+                            <a class="gray" href="resetpass1.html">忘记登录密码?</a>
+                        </p>
+                        <p>
+                            <a class="signinbtn" href="javascript:void(0)">登录</a>
+                        </p>
+                        <p class="third ">第三方登录</p>
+                        <div class="other">
+                            <a href="javascript:void(0)" class="qq pop-up">
+                                <i></i>
+                            </a>
+                            <a href="javascript:void(0)" class="sina pop-up">
+                                <i></i>
+                            </a>
+                            <a href="https://login.yiguo.com/SQ" class="ay">
+                                <i></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <div class="popout-code">
+        <a href="javascript:void(0);" class="close"></a>
+        <p>亲，第三方登录目前仅支持移动端，请拿起手机扫描以下二维码下载易果生鲜APP或关注微信服务号吧！</p>
+        <div class="pcode"><img src="http://img07.yiguoimg.com/e/web/161205/01855/150158/code.jpg"></div>
+    </div>
+    <script src="js/base.js"></script>
+</body>
+</html>
