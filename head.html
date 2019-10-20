@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/head.css">
     <link rel="stylesheet" href="style/common.css">
     <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/footer.css">
     <title>易果生鲜</title>
 </head>
 <body>
@@ -2577,7 +2578,7 @@
                                                         <a class="site-nav" href="javascript:;">麒麟区</a>
                                                         <a class="site-nav" href="javascript:;">陆良县</a>
                                                         <a class="site-nav" href="javascript:;">富源县</a>
-                                                        <a class="site-nav" href="javascript:;">沾益县</a>
+                                                        <a class="site-nav" href="javascript:;">��益县</a>
                                                     </div>
                                                     <div class="citylist-tab citylist-tab-Q2">
                                                         <a class="site-nav" href="javascript:;">潜江市</a>
@@ -4143,15 +4144,15 @@
                         </div>
                     </li>
                     <li class="myyiguo">
-                        <a href="#" class="myyiguo-a hover"><i class="i-c i-a"></i>我的易果<b class="b"></b></a>
+                        <a href="#" class="myyiguo-a hover" data-list="0"><i class="i-c i-a"></i>我的易果<b class="b"></b></a>
                         <div id="phone-QR-code">
-                            <a href="javascript:void(0)" class="nofollow hover">我的订单</a>
-                            <a href="javascript:void(0)" class="nofollow hover">我的优惠券<sapn id="coupon">3</span></a>
-                            <a href="javascript:void(0)" class="nofollow hover">我的收藏</a>
-                            <a href="javascript:void(0)" class="nofollow hover">我的悠币</a>
-                            <a href="javascript:void(0)" class="nofollow hover">我的退换货</a>
-                            <a href="javascript:void(0)" class="nofollow hover">预存款查询</a>
-                            <a href="javascript:void(0)" class="nofollow hover">立即充值</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="1">我的订单</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="2">我的优惠券<sapn id="coupon">3</span></a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="6">我的收藏</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="3">我的悠币</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="13">我的退换货</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="8">预存款查询</a>
+                            <a href="javascript:void(0)" class="nofollow hover" data-list="7">评论商品</a>
                         </div>
                     </li>
                     <li class="con-item tit-hidden loginout"><a id="out" class="hover" href="javascript:;">[退出]</a></li>
@@ -4194,8 +4195,8 @@
             <div class="mygnav">
                 <a href="javascript:void(0)" class="ygindex">首页</a>
                 >
-                <a href="javascript:void(0)" class="mYg">我的易果</a>
-                <span>><a href="javascript:void(0)" class="m-order">我的订单</a></span>
+                <a href="javascript:void(0)" class="mYg" data-list="0">我的易果</a>
+                <span class="nownav hidden">><a href="javascript:void(0)" class="m-order"></a></span>
             </div>
             <div class="myyg-content clearfix">
                 <!-- 左边菜单 -->
@@ -4203,35 +4204,120 @@
                     <div class="l-menu">
                         <dl>
                             <dt>交易信息</dt>
-                            <dd ><a class="on menu-list" href="javacsript:void(0)" data-list="0">我的订单</a></dd>
+                            <dd ><a class="menu-list1" href="javacsript:void(0)" data-list="1">我的订单</a></dd>
                             <dd>
-                                <a  class=" menu-list" href="javacsript:void(0)" data-list="1">我的优惠券</a>
+                                <a href="javacsript:void(0)" data-list="2">我的优惠券</a>
                                 <span id="num">3</span>
                             </dd>
-                            <dd><a class="menu-list" href="javacsript:void(0)" data-list="2">我的悠币</a></dd>
-                            <dd><a class="menu-list" href="javacsript:void(0)" data-list="3">我的礼品兑换券</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="4">购买过的商品</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="5">我的收藏</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="6">评论商品</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="3">我的悠币</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="4">我的礼品兑换券</a></dd>
+                            <dd><a class="menu-list3" href="javacsript:void(0)" data-list="5">购买过的商品</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="6">我的收藏</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="7">评论商品</a></dd>
                             <dt>账号信息</dt>
-                            <dd><a href="javacsript:void(0)" data-list="7">卡包余额</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="8">卡包余额</a></dd>
                             <dd>
-                                <a href="javacsript:void(0)" data-list="8">个人资料</a>
+                                <a class="menu-list2" href="javacsript:void(0)" data-list="9">个人资料</a>
                                 <img style="height: 19px; width: 20px; margin-left: 10px;" src="http://static01.yiguo.com/utaste/images/icon-gift.png">
                             </dd>
-                            <dd><a href="javacsript:void(0)" data-list="9">账号安全</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="10">收货地址管理</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="11">企业福利入口</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="10">账号安全</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="11">收货地址管理</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="12">企业福利入口</a></dd>
                             <dt>售后服务</dt>
-                            <dd><a href="javacsript:void(0)" data-list="12">在线退换货</a></dd>
-                            <dd><a href="javacsript:void(0)" data-list="13">投诉建议</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="13">在线退换货</a></dd>
+                            <dd><a href="javacsript:void(0)" data-list="14">投诉建议</a></dd>
                         </dl>
                     </div>
                 </div>
                 <!-- 右面内容 -->
                 <div class="content-r">
+                    <!-- 我的易果 -->
+                    <div class="main myygcontent hidden" data-page="0">
+                        <div class="user-info clearfix">
+                            <div class="info-lcol">
+                                <div class="u-pic">
+                                    <img alt="用户头像" src="http://static01.yiguo.com/utaste/images/no-pic.jpg" style="width:90px;height:90px;">
+                                    <div class="pic-border"></div>
+                                </div>
+                                <div class="info-m">
+                                    <div class="u-name">
+                                        <a class="name" href="javascript:void(0)"></a><a class="modify " href="javascript:void(0)">修改</a>
+                                    </div>
+                                    <div class="u-level">
+                                        <div class="vip">
+                                            <div class="grade"><i></i>易果生鲜普通用户</div>
+                                            <div class="grade-line"><span><i style="width:0%"></i></span></div>
+                                        </div>
+                                        <a class="vip-info" href="javascript:void(0)">查看会员等级制度<i class="ml5" style="display: none;"><img src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
+                                    </div>
+                                </div>
+                                <div class="u-safe">
+                                    <div class="safe-rank">账户安全等级:<b>高</b><a href="javascript:void(0)">提升</a></div>
+                                    <div class="telNum"><i></i>手机:<a href="javascript:void(0)"></a></div>
+                                    <div class="e-mail"><i></i>邮箱: <a href="javascript:void(0)"></a></div>
+                                </div>
+                                <div class="info-line"></div>
+                            </div>
+                            <div class="info-rcol">
+                                <ul class="acco-info">
+                                    <li class="balance">
+                                        <h4><i></i>卡包余额</h4>
+                                        <div class="nums"><b title="¥0.00">¥0.00</b></div>
+                                    </li>
+                                    <li class="yb">
+                                        <h4><i></i> 悠币</h4>
+                                        <div class="nums"><b>250</b></div>
+                                        <div><a href="javascript:void(0)">兑换</a></div>
+                                    </li>
+                                    <li class="coupons">
+                                        <h4><i></i>优惠券</h4>
+                                        <div class="nums"><b>1</b></div>
+                                        <div><a href="javascript:void(0)">查看</a></div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="myorder">
+                            <div class="table-title">
+                                <h3>我的订单</h3>
+                                <a class="all" href="javascript:void(0)">查看全部订单</a>
+                            </div>
+                            <div class="order-list-body">
+                                <ul class="j_allorderli">
+                                    <div class="order-none">亲爱的易果用户，您目前尚无记录呦～
+                                        <a href="javascript:void(0)">快去逛逛吧</a>～
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mod-buy">
+                            <div class="table-title">
+                                <h3>我购买过的商品</h3>
+                                <a class="all" href="javascript:void(0)">查看全部商品</a>
+                            </div>
+                            <table id="historylst" class="j_product">
+                                <thead>
+                                    <tr>
+                                        <th width="360">商品</th>
+                                        <th width="150">单价</th>
+                                        <th width="150">购买次数</th>
+                                        <th width="150">商品状态</th>
+                                        <th width="130">操作</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <div class="order-list-body">
+                                <ul class="j_allorderli">
+                                    <div class="order-none">亲爱的易果用户，您目前尚无记录呦～
+                                        <a href="javascript:void(0)">快去逛逛吧</a>～
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 我的订单 -->
-                    <div class="main maincontent hidden">
+                    <div class="main maincontent hidden myordercontent">
                         <!-- 标题 -->
                         <div class="title clearfix">
                              我的订单
@@ -4706,7 +4792,7 @@
                     <!-- 我的悠币 -->
                     <div class="main maincontent hidden">
                         <div class="title"> 我的悠币</div>
-                        <div class="yb">
+                        <div class="myyb">
                             当前可用悠币：
                             <strong>170.00</strong>
                             个
@@ -4825,7 +4911,7 @@
                         </div>
                     </div>
                     <!-- 购买过的商品 -->
-                    <div class="main maincontent hidden">
+                    <div class="main maincontent hidden goodscontent">
                         <!-- 标题 -->
                         <div class="title">购买过的商品</div>
                         <div class="toolbar">
@@ -5154,24 +5240,24 @@
                                     <a href="javascript:void(0)" class="edit"><i></i>修改</a>
                                 </div>
                             </li>
-                            <li class="si-password clearfix">
+                            <li class="si-password finshsp clearfix">
                                 <div class="field"><i></i>密码修改</div>
                                 <div class="supply"><span class="red">经常的更换您的账号密码，并且不要和其他账号共用同一个密码</span></div>
                                 <div class="operate"><a href="javascript:void(0)" class="btn-green editpass-btn">修改密码</a></div>
                             </li>
-                            <li class="si-mail clearfix">
+                            <li class="si-paypass continuesp clearfix">
                                 <div class="field"><i></i>支付密码</div>
                                 <div class="supply"><span>使用礼品卡进行支付时要求输入支付密码，建议不要设置成为登录密码或与其他应用共用的密码。</span></div>
                                 <div class="operate"><a href="javascript:void(0)" class="btn-green setpass-btn">设置密码</a></div>
                             </li>
-                            <li class="si-mail clearfix">
+                            <li class="si-mail finshsp clearfix">
                                 <div class="field"><i></i>邮箱验证</div>
                                 <div class="supply">
                                     邮箱将是您的有效身份证，在保证安全的同时还可以提供密码找回，消息推送服务
                                 </div>
                                 <div class="operate"><a href="javascript:void(0)" class="btn-green email-btn">邮箱验证</a></div>
                             </li>
-                            <li class="si-phone clearfix">
+                            <li class="si-phone finshsp clearfix">
                                 <div class="field"><i></i>手机验证</div>
                                 <div class="supply">            
                                     验证手机后您可以收到易果推送的短信及密码找回服务
@@ -5374,7 +5460,7 @@
                         </div>
                     </div>
                     <!-- 账户安全中设置密码 -->
-                    <div class="main maincontent setpass">
+                    <div class="main maincontent setpass hidden">
                         <div class="sub-title">修改密码</div>
                         <p class="center setpass-tit">
                             验证码已发送您尾号<span class="number"></span>的手机，
@@ -5411,7 +5497,7 @@
                                         <div class="content">
                                             <p style="font-size: 14px; padding-top: 15px;"></p>
                                             <div class="btnbox" style="margin-top: 45px;">
-                                                <a class="confirm" href="javascript:">确定</a>
+                                                <a class="confirm confirmlast" href="javascript:">确定</a>
                                             </div>   
                                         </div>
                                     </div>
@@ -5419,6 +5505,86 @@
                                 <div class="popout-bg">&nbsp;</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+         <!-- 底部 -->
+        <div class="footer margintop30">
+            <div class="wrap">
+                <div class="col">
+                    <span><i class="warp-icon warp-icon1"></i>新手指南</span>
+                    <ul>
+                        <li><a href="footer1.html">账户注册</a></li>
+                        <li><a href="footer2.html">购物流程</a></li>
+                        <li><a href="footer3.html">订购方式</a></li>
+                        <li><a href="footer4.html">悠币说明</a></li>
+                        <li><a href="vip.html">会员等级</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <span><i class="warp-icon warp-icon2"></i>付款方式</span>
+                    <ul>
+                        <li><a href="footer6.html">支付方式</a>/
+                            <a href="footer7.html">发票说明</a>
+                        </li>
+                        <li><a href="footer9.html">礼品卡章程</a></li>
+                        <li><a href="footer10.html">优惠代码</a></li>
+                        <li><a href="footer11.html">卡券购买章程</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <span><i class="warp-icon warp-icon3"></i>配送方式</span>
+                    <ul>
+                        <li><a href="footer12.html">配送运费</a></li>
+                        <li><a href="footer13.html">时间及范围</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <span><i class="warp-icon warp-icon4"></i>售后服务</span>
+                    <ul>
+                        <li><a href="footer15.html">退换货政策</a></li>
+                        <li><a href="footer16.html">退换货流程</a></li>
+                        <li><a href="footer17.html">常见问题</a></li>
+                        <li><a href="login.html">投诉与建议</a></li>
+                    </ul>
+                </div>
+            <div class="col">
+                <span><i class="warp-icon warp-icon5"></i>关于我们</span>
+                <ul>
+                    <li><a href="footer20.html">公司介绍</a></li>
+                    <li><a href="footer21.html">联系我们</a></li>
+                    <li><a href="footer22.html">业务合作</a></li>
+                    <li><a href="footer23.html">诚信举报</a></li>
+                    <li><a href="footer24.html">用户协议</a></li>
+                    <li><a href="footer25.html">隐私协议</a></li>
+                </ul>
+            </div>
+                <div class="service">
+                    <span>客服热线 400-000-7788</span>
+                    <span>周一至周日 9:00-21:00</span>
+                </div>
+                <div class="copyright">
+                    <p>
+                        所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。
+                    </p>
+                    <p>
+                        <a href="javascript:void(0)">沪ICP备09008015号</a>
+                        Copyright © 2005-2019 
+                        <a href="javascript:void(0)"></a>
+                        版权所有
+                    </p>
+                    <p class="copyright_p">
+                        <a href="http://www.yiguo.com/legal">
+                            <img src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png" alt="">
+                        </a>
+                        <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20110512114405424">
+                            <img class="copyright-img" src="http://img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg" alt="">
+                        </a>
+                        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002">
+                            <img class="copyright_p-img" src="http://www.beian.gov.cn/file/ghs.png" alt="">
+                            <span class="copyright_span-login">沪公网安备 31010502000002号</span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>

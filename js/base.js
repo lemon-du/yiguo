@@ -372,6 +372,7 @@ $(function(){
     var phonepatt=/^1[3-9]\d{9}$/;
     var passwordpatt=/^[0-9A-z]{6,20}$/;
     //表单验证
+    var timer;
     $("#checkbtn").click(function(){
         if(!$(this).prop("checked")) {
             $(".register #signupbtn").css("background","");
@@ -379,22 +380,21 @@ $(function(){
             $("#signupbtn").removeAttr("disabled");
             $(".register #signupbtn").css("background","#008422");
             $("#signupbtn").click(function(){
-                if($(".phone").val()=="") {
-                    $(".pass-error").remove();
-                    if(!$("span").hasClass("pass-tip")) {
-                        $(".phone").parent().append(`
+                if($(".forms .phone").val()=="") {
+                    if(!$(".forms .phone").next().is("span")) {
+                        $(".forms .phone").parent().append(`
                             <span class="pass-tip">
                                 <i></i>
                                 手机号不能为空
                             </span>
                         `)
                     }else {
-                        $(".pass-tip").html("<i></i>手机号不能为空");
+                        $(".forms .phone").next().attr("class","pass-tip");
+                        $(".forms .phone").next().html("<i></i>手机号不能为空");
                     }
                 }else {
-                    $(".pass-tip").remove();
                     if (!phonepatt.test($(".phone").val())) {
-                        if(!$("span").hasClass("pass-error")) {
+                        if(!$(".phone").next().is("span")) {
                             $(".phone").parent().append(`
                                 <span class="pass-error">
                                     <i></i>
@@ -402,40 +402,40 @@ $(function(){
                                 </span>
                             `)
                         }else {
-                            $(".pass-error").html("<i></i>手机号格式不正确"); 
+                            $(".phone").next().attr("class","pass-error");
+                            $(".phone").next().html("<i></i>手机号格式不正确"); 
                         }
                     }else {
-                        $("pass-tip").remove();
-                        $(".pass-error").remove();
                         if($(".ver-code").val()=='') {
-                            if(!$("span").hasClass("pass-tip")) {
-                                $(".phone").parent().append(`
+                            if(!$(".forms .phone").next().is("span")) {
+                                $(".forms .phone").parent().append(`
                                     <span class="pass-tip">
                                         <i></i>
                                         图形验证码不能为空
                                     </span>
                                 `)
                             }else {
-                                $(".pass-tip").html("<i></i>请输入图形验证码");
+                                $(".forms .phone").next().attr("class","pass-tip");
+                                $(".forms .phone").next().html("<i></i>请输入图形验证码");
                             }
                         }else {
-                            if($(".ver-code").val().toUpperCase()!=$(".codes").html().toUpperCase()){
-                                if(!$("span").hasClass("pass-error")) {
-                                    $(".phone").parent().append(`
+                            if($(".forms .ver-code").val().toUpperCase()!=$(".codes").html().toUpperCase()){
+                                if(!$(".forms .phone").next().is("span")) {
+                                    $(".forms .phone").parent().append(`
                                         <span class="pass-error">
                                             <i></i>
                                             图形验证码不正确
                                         </span>
                                     `)
                                 }else {
-                                    $(".pass-error").html("<i></i>图形验证码不正确");
+                                    $(".forms .phone").next().attr("class","pass-error");
+                                    $(".forms .phone").next().html("<i></i>图形验证码不正确");
                                 }
                             }else{
-                                $(".pass-error").remove();
-                                if($(".password").val()==''||$(".confirm-password").val()=='') {
-                                    $(".pass-error").remove();
-                                    if(!$("span").hasClass("pass-tip")) {
-                                        $(".confirm-password").parent().append(`
+                                $(".forms .phone").next().remove();
+                                if($(".forms .password").val()==''||$(".forms .confirm-password").val()=='') {
+                                    if(!$(".forms .confirm-password").next().is("span")) {
+                                        $(".forms .confirm-password").parent().append(`
                                             <span class="pass-tip">
                                                 <i></i>
                                                 密码不能为空
@@ -443,19 +443,21 @@ $(function(){
                                         `)
                                     }
                                 }else {
-                                    $(".pass-tip").remove();
                                     if(!passwordpatt.test($(".password").val())) {
-                                        if(!$("span").hasClass("pass-error")) {
-                                            $(".confirm-password").parent().append(`
+                                        if(!$(".forms .confirm-password").next().is("span")) {
+                                            $(".forms .confirm-password").parent().append(`
                                                 <span class="pass-error">
                                                     <i></i>
                                                     密码不能小于6位
                                                 </span>
                                             `)
+                                        }else {
+                                            $(".forms .confirm-password").next().attr("class","pass-error");
+                                            $(".forms .confirm-password").next().html("<i></i>密码不能小于6位");
                                         }
                                     } else {
                                         if($(".password").val()!=$(".confirm-password").val()) {
-                                            if(!$("span").hasClass("pass-error")) {
+                                            if(!$(".forms .confirm-password").next().is("span")) {
                                                 $(".confirm-password").parent().append(`
                                                     <span class="pass-error">
                                                         <i></i>
@@ -463,26 +465,42 @@ $(function(){
                                                     </span>
                                                 `)
                                             }else {
-                                                $(".pass-error").html("<i></i>两次密码不一致");
+                                                $(".forms .confirm-password").next().attr("class","pass-error");
+                                                $(".forms .confirm-password").next().html("<i></i>两次密码不一致");
                                             }
                                         }else {
-                                            if(!$("span").hasClass("pass")) {
-                                                $(".confirm-password").parent().append(`
-                                                    <span class="pass">
-                                                        <i></i>
-                                                    </span>
-                                                `)
-                                            }
+                                            $(".forms .confirm-password").next(".pass-error,.pass-tip").empty();
                                             $.ajax({
                                                 type:"POST",
                                                 url: "http://localhost/register.php",
                                                 data: {
-                                                    phone:$(".phone").val(),
-                                                    password:$(".password").val(),
+                                                    phone:$(".forms .phone").val(),
+                                                    password:$(".forms .password").val(),
                                                 },
                                                 dataType:"json",
+                                                success:function(data){
+                                                    if(data==1){
+                                                        $(".forms .confirm-password").next().remove();
+                                                        $(".forms .phone").parent().append(`
+                                                            <span class="pass-error">
+                                                                <i></i>
+                                                                该手机号已被注册
+                                                            </span>
+                                                        `)
+                                                    }else {
+                                                        if(!$(".forms .confirm-password").next().hasClass("pass")) {
+                                                            $(".forms .confirm-password").parent().append(`
+                                                                <span class="pass">
+                                                                    <i></i>
+                                                                </span>
+                                                            `)
+                                                        }
+                                                        timer=setTimeout(function(){
+                                                                window.location.href="login.html";
+                                                            },1000)
+                                                    }
+                                                }
                                             })
-                                            window.location.href="login.html";
                                         }
                                     }
                                 }
@@ -493,16 +511,27 @@ $(function(){
             })
         }
     })
+    clearTimeout(timer);
      // 控制确认密码输入框失去焦点时提示信息
-    $(".confirm-password").blur(function(){
-        $(".pass-tip").remove();
-        $(".pass-error").remove();
+    $(".forms .confirm-password").blur(function(){
         if($(".confirm-password").val()=='') {
-            if(!$("span").hasClass("pass-tip")) {
+            if(!$(this).next().is("span")) {
                 $(".confirm-password").parent().append(`
                     <span class="pass-tip">
                         <i></i>
                         密码不能为空
+                    </span>
+                `)
+            }
+        }
+    })
+    $(".forms .phone").blur(function(){
+        if($(".forms .phone").val()=='') {
+            if(!$(this).next().is("span")) {
+                $(".phone").parent().append(`
+                    <span class="pass-tip">
+                        <i></i>
+                        手机号不能为空
                     </span>
                 `)
             }
@@ -525,18 +554,33 @@ $(function(){
     }  
     createCode();
     // 点击获取验证码出现倒计时
-    var text=60;
-    $(".getCode").click(function(){
-        var timer=setInterval(function(){
-            if(text>=0) {
-                $(".getCode").html("还剩下<span>"+text+"</span>s");
-                text-=1;
+        var text=60;
+        var timer1;
+        $(".getCode").click(function(){
+            if($(".forms .phone").val()!=''&&phonepatt.test($(".phone").val())){
+                $(this).next().remove();
+                if(!timer1){
+                    timer1=setInterval(function(){
+                        if(text>=0) {
+                            $(".getCode").html("还剩下<span>"+text+"</span>s");
+                            text-=1;
+                        }else {
+                            $(".getCode").html("获取验证码");
+                            clearInterval(timer1);
+                        }
+                    },1000);
+                }
             }else {
-                $(".getCode").html("获取验证码");
-                clearInterval(timer);
+                if(!$(this).next().hasClass("pass-tip")) {
+                    $(this).after(`
+                        <span class="pass-tip">
+                            <i></i>
+                            请输入正确手机号
+                        </span>
+                    `)
+                }
             }
-        },1000);
-    })
+        })
     // 点击切换验证码
     $(".tab").click(function(){
         createCode();
@@ -550,17 +594,17 @@ $(function(){
     })
     // 控制协议弹框
     $(".agreements").click(function(){
-        $(".popout").eq($(this).index()).show();
+        $(".popoutbox .popout").eq($(this).index()).show();
         $(".mask").show();
     })
     // 控制协议弹框下方按钮
     $(".btn-gn").click(function(){
-        $(".popout").hide();
+        $(".popoutbox .popout").hide();
         $(".mask").hide();
     })
     // 控制协议弹框右侧叉号
     $(".close").click(function(){
-        $(".popout").hide();
+        $(".popoutbox .popout").hide();
         $(".popout-code").hide();
         $(".mask").hide();
     })
@@ -594,7 +638,6 @@ $(function(){
                         },
                         dataType:"JSON",
                         success: function(data){
-                            console.log(data)
                             if(data==1) {
                                 localStorage.setItem("value",$(".input-phone").val());
                                 window.location.href="head.html";
@@ -635,12 +678,14 @@ $(function(){
         $(".loginout").removeClass("tit-hidden");
         $(".login-reg").addClass("tit-hidden");
         $("#tel").html(key);
+        $(".user-info .name").html(key);
         $(".userphone").html(key);
         var keyArr=[];
         keyArr.push(key.slice(0,3));
         keyArr.push(key.slice(7,11));
         var phonevalue=keyArr.join("****");
         $(".myphone strong").html(phonevalue);
+        $(".user-info .telNum a").html(phonevalue);
     }
     $("#out").click(function(){
         key=localStorage.removeItem("value");
@@ -649,19 +694,68 @@ $(function(){
     })
     // 首页点击我的易果
     $(".nofollow").click(function(){
+        localStorage.setItem("pagenum",$(this).data("list"));
+        localStorage.removeItem("page");
+        localStorage.setItem("content",$(this).html().slice(0,5));
         if(!key) {
             window.location.href="login.html";
         }else {
             window.location.href="head.html";
         }
-    }) 
+    })
+    if(localStorage.getItem("content")) {
+        $(".mygnav .nownav").removeClass("hidden");
+        $(".mygnav .nownav .m-order").html(localStorage.getItem("content"));
+        localStorage.removeItem("content");
+    }
+    if(localStorage.getItem("pagenum")) {
+        $(".main").eq(localStorage.getItem("pagenum")).removeClass("hidden").siblings().addClass("hidden");
+        $(".l-menu a").eq(localStorage.getItem("pagenum")-1).addClass("on");
+        localStorage.removeItem("pagenum");
+    }
     // 点击我的易果左侧列表
     $(".l-menu a").click(function(){
+        $(".mygnav .nownav").removeClass("hidden");
+        $(".mYg").removeClass("m-order")
         $(".main").eq($(this).data("list")).removeClass("hidden").siblings().addClass("hidden")
         $(".l-menu a").removeClass("on");
         $(this).addClass("on");
         $(".m-order").html($(this).html());
     })
+    // 点击我的易果标题
+    $(".myyiguo-a").click(function(){
+        localStorage.setItem("page",$(this).data("list"));
+        window.location.href="head.html";
+    })
+    if(localStorage.getItem("page")) {
+        $(".mYg").addClass("m-order");
+        $(".main").eq(localStorage.getItem("page")).removeClass("hidden").siblings().addClass("hidden");
+        localStorage.removeItem("page");
+    }
+    $(".mYg").click(function(){
+        $(".mygnav .nownav").addClass("hidden");
+        $(this).addClass("m-order");
+        $(".main").eq(0).removeClass("hidden").siblings().addClass("hidden");
+    })
+    // 我的易果详情页我的易果部分
+        $(".user-info .info-lcol .modify,.user-info .u-safe  a").click(function(){
+            $(".personal").removeClass("hidden");
+            $(".myygcontent").addClass("hidden");
+            $(".l-menu a").removeClass("on");
+            $(".l-menu .menu-list2").addClass("on");
+        })
+        $(".myorder .all").click(function(){
+            $(".myordercontent").removeClass("hidden")
+            $(".myygcontent").addClass("hidden");
+            $(".l-menu a").removeClass("on");
+            $(".l-menu .menu-list1").addClass("on");
+        })
+        $(".mod-buy .all").click(function(){
+            $(".goodscontent").removeClass("hidden")
+            $(".myygcontent").addClass("hidden");
+            $(".l-menu a").removeClass("on");
+            $(".l-menu .menu-list3").addClass("on");
+        })
     // 我的易果详情页优惠券部分
     $(".coupon-type").click(function(){
         $(this).addClass("on").siblings().removeClass("on");
@@ -735,14 +829,21 @@ $(function(){
     })
     // 账户安全部分
     // 点击修改,邮箱验证,手机验证跳转到个人资料页面
-    $(".edit,.email-btn,.editphone-btn").click(function(){
+    $(".IRA .edit,.email-btn,.editphone-btn").click(function(){
         $(".IRA").addClass("hidden");
         $(".personal").removeClass("hidden");
+        $(".l-menu a").removeClass("on");
+        $(".l-menu .menu-list2").addClass("on");
     })
     // 点击账户安全中的修改密码按钮
     $(".editpass-btn").click(function(){
         $(".IRA").addClass("hidden");
         $(".editpass").removeClass("hidden");
+    })
+    // 点击账户安全中设置密码按钮
+    $(".setpass-btn").click(function(){
+        $(".IRA").addClass("hidden");
+        $(".setpass").removeClass("hidden");
     })
     $(".edit-cont .input").blur(function(){
         if($(this).val()=="") {
@@ -765,47 +866,47 @@ $(function(){
     })
     // 进行密码验证
     $(".editpass .btn .btn-green").click(function(){
-        if($(".edit-cont .input").val()==""&&$(".edit-cont .input").val().length<6) {
+        if($(".edit-cont .input").val()==""||$(".edit-cont .input").val().length<6) {
             $(".editpass .error").show();
         }else {
-              $.ajax({
-            type:"POST",
-            url:"http://localhost/login.php",
-            dataType:"json",
-            data:{
-                phone:key,
-                password:$("#OldPassword").val()
-            },
-            success:function(data){
-                if(data==1){
-                    if($("#NewPassword").val()!="") {
-                        if($("#NewPassword").val()==$("#ConfirmPassword").val()){
-                            $(".popout-content>.content>p").text("修改成功");
-                            $(".Dailog-poput").css("display","block");
-                            $(".Dailog-poput .confirmlast").click(function() {
-                                $(".Dailog-poput").css("display","none");
-                                $(".IRA").removeClass("hidden");
-                                $(".editpass").addClass("hidden");
-                            })
-                            $.ajax({
-                                type:"POST",
-                                url:"http://localhost/register.php",
-                                dataType:"json",
-                                data:{
-                                    phone:key,
-                                    Newpassword:$("#NewPassword").val()
-                                },
-                            })
-                        }else{
-                            $("#ConfirmPassword").next().html("两次密码输入不一致");
+            $.ajax({
+                type:"POST",
+                url:"http://localhost/login.php",
+                dataType:"json",
+                data:{
+                    phone:key,
+                    password:$("#OldPassword").val()
+                },
+                success:function(data){
+                    if(data==1){
+                        if($("#NewPassword").val()!="") {
+                            if($("#NewPassword").val()==$("#ConfirmPassword").val()){
+                                $(".popout-content>.content>p").text("修改成功");
+                                $(".Dailog-poput").css("display","block");
+                                $(".Dailog-poput .confirmlast").click(function() {
+                                    $(".Dailog-poput").css("display","none");
+                                    $(".IRA").removeClass("hidden");
+                                    $(".editpass").addClass("hidden");
+                                })
+                                $.ajax({
+                                    type:"POST",
+                                    url:"http://localhost/reset.php",
+                                    dataType:"json",
+                                    data:{
+                                        phone:key,
+                                        Newpassword:$("#NewPassword").val()
+                                    },
+                                })
+                            }else{
+                                $("#ConfirmPassword").next().html("两次密码输入不一致");
+                            }
                         }
+                    }else {
+                        $(".popout-content>.content>p").text("原密码错误");
+                        $(".Dailog-poput").css("display","block");
                     }
-                }else {
-                    $(".popout-content>.content>p").text("原密码错误");
-                    $(".Dailog-poput").css("display","block");
                 }
-            }
-        })
+            })
         }
     })
     // 企业福利选项框不能为空
@@ -895,16 +996,29 @@ $(function(){
                             $(".popout-content>.content>p").text("请输入6位数字支付密码");
                             $(".Dailog-poput").css("display","block");
                         }else {
-
+                            $(".popout-content>.content>p").text("密码设置成功");
+                            $(".Dailog-poput").css("display","block");
+                            $(".Dailog-poput .confirmlast").click(function() {
+                                $(".Dailog-poput").css("display","none");
+                                $(".IRA").removeClass("hidden");
+                                $(".setpass").addClass("hidden");
+                            })
+                            $(".safe-info .si-paypass").attr("class","si-paypass finshsp clearfix");
+                            $(".safe-info .setpass-btn").html("修改密码");
+                            $(".safe-info .setpass-btn").css({
+                                color: "#008422",
+                                background: "#ffff",
+                                border:"1px solid #008422" 
+                            })
                         }
                     }
                 }
-                // if(!patt.test($("#pay-pass").val())) {
-                //     $(".popout-content>.content>p").text("请输入");
-                //     $(".Dailog-poput").css("display","block");
-                // }
             }
         }
+    })
+    // 忘记密码 重置密码
+    $(".resetpass .btn-green1").click(function(){
+
     })
 })
     

@@ -6,6 +6,9 @@
     margin: auto;
     padding: 15px 0 5px;
 }
+.resetpass .wrap {
+    padding: 0;
+}
 .clearfix {
     overflow: hidden;
 }
@@ -41,7 +44,7 @@
 .forms-right {
     float: right;
 }
-.forms-left .input ,.login-main .input{
+.forms-left .input ,.login-main .input,.resetpass .input{
     width: 290px;
     height: 38px;
     margin-right:20px;
@@ -72,7 +75,10 @@
     padding-right: 20px;
     text-align: right;
 }
-.ver-code, .phone-code {
+.resetpass #tel-ver{
+    font-family: Arial,"Microsoft YaHei";
+}
+.resetpass .ver-code, .phone-code {
     width: 147px;
 }
 .tab {
@@ -166,7 +172,7 @@
 .pass i {
     background-position: 0  -200px;
 }
-.popout {
+.popoutbox .popout {
     position: absolute;
     left: 0;
     right: 0;
@@ -187,7 +193,7 @@
     overflow: auto;
 }
 .mask { 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -197,7 +203,7 @@
     opacity: 0.5;
     display: none;
 }
-.popout .title {
+.popoutbox .popout .title {
     position: relative;
     height: 40px;
     font: bold 16px/40px '宋体';
@@ -242,7 +248,7 @@ strong {
 .underline {
     text-decoration: underline;
 }
-h4 {
+.popoutbox sh4 {
     color: #555;
 }
 .loginBox {
@@ -388,7 +394,8 @@ h4 {
     width: 66%;
     margin: 0 auto;
     margin-bottom: 30px;
-    font-size: 14px;
+    color: #444;
+    font: 14px Arial,"Microsoft YaHei";
 }
 .resetpass {
     padding-top: 30px;
@@ -490,6 +497,248 @@ h4 {
     padding: 20px;
     background: #fff;
     border: 1px solid #e3e6e0;
+}
+.maincontent .comment-detail {
+    padding: 10px;
+}
+.myygcontent {
+    width: 984px;
+}
+/* 我的易果内容 */
+.user-info {
+    position: relative;
+    margin-bottom: 20px;
+    height: 122px;
+    padding-right: 4px;
+    background: url(http://static01.yiguo.com/utaste/images/user-info-bg.png) no-repeat top right;
+}
+.user-info .info-lcol {
+    float: left;
+    position: relative;
+    width: 485px;
+    height: 90px;
+    padding: 15px 17px 15px 0;
+    border: 1px solid #e3e6e0;
+    border-right: 0px;
+    border-radius: 86px 0 0 86px;
+    background: #fff;
+}
+.user-info .u-pic {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin: 0 0 0 20px;
+    z-index: 2;
+    overflow: hidden;
+    text-align: center;
+}
+.user-info .u-name .name {
+    display: block;
+    float: left;
+    width: 90px;
+    font-size: 18px;
+    color: #444;
+    font-family: "microsoft yahei";
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.user-info .u-name .modify {
+    display: block;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #008842;
+    text-decoration: underline;
+}
+.user-info .u-level .grade {
+    height: 16px;
+    font-size: 12px;
+    color: #444;
+}
+.user-info .u-level .grade i {
+    display: inline-block;
+    width: 13px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/utaste/images/yyh-icon.jpg) no-repeat;
+}
+.user-info .u-level {
+    margin-bottom: 10px;
+}
+.user-info .u-safe {
+    float: left;
+    margin: 0 0 0 20px;
+    line-height: 30px;
+    color: #666;
+}
+.user-info .u-pic .pic-border {
+    background: url(http://static01.yiguo.com/utaste/images/myjd-bg.png) no-repeat 0 0;
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+.user-info .info-m {
+    float: left;
+    width: 140px;
+    position: relative;
+    margin-left: 20px;
+}
+.user-info .u-name {
+    line-height: 28px;
+    margin-bottom: 5px;
+}
+.user-info .u-level .grade-line span {
+    position: relative;
+    height: 4px;
+    background: #dfeed3;
+    display: block;
+    width: 100%;
+}
+.user-info .u-level .grade-line {
+    width: 115px;
+    height: 4px;
+    margin-top: 8px;
+}
+.user-info .u-level .vip-info {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.user-info .u-safe {
+    float: left;
+    margin: 0 0 0 20px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #666;
+}
+.user-info b {
+    color: #e8380d;
+    font-weight: normal;
+}
+.user-info .u-safe .safe-rank a {
+    margin-left: 15px;
+}
+.user-info .u-safe  a {
+    color: #008422;
+    text-decoration: underline;
+}
+.user-info .u-safe .telNum i, .user-info .u-safe .e-mail i {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/utaste/images/user-info.png);
+}
+.user-info .u-safe .telNum i {
+    background-position: -24px 0;
+}
+.user-info .u-safe .e-mail i {
+    background-position: 0  0;
+}
+.user-info .info-line {
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 17px;
+    height: 122px;
+    z-index: 1;
+    background: url(http://static01.yiguo.com/utaste/images/info-line.jpg) no-repeat;
+}
+.user-info .info-rcol {
+    float: left;
+    height: 120px;
+    width: 477px;
+    border: 1px solid #e3e6e0;
+    border-right: 0px;
+    border-left: 0px;
+    background: #fff;
+}
+.user-info .acco-info li h4 {
+    height: 15px;
+    color: #5d5d5d;
+    font-size: 12px;
+    font-weight: normal;
+}
+.user-info .acco-info li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.user-info .acco-info li i {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/utaste/images/user-info.png);
+}
+.user-info .acco-info .balance i {
+    background-position: -48px 0;
+}
+.user-info .acco-info .yb i {
+    background-position: -71px 0;
+}
+.user-info .acco-info .coupons i {
+    background-position: -95px 0;
+}
+.user-info .acco-info {
+    margin-top: 22px;
+}
+.user-info .acco-info li .nums {
+    margin: 10px 0;
+    font-size: 16px;
+}
+.user-info .acco-info li a {
+    display: inline-block;
+    padding: 2px 7px;
+    color: #5d5d5d;
+    font-size: 12px;
+    border: 1px solid #c5c5c5;
+    background: #fafafa;
+}
+.main .myorder,.main .mod-buy {
+    margin-bottom: 20px;
+    background-color: #ffff;
+}
+.main  .myorder .table-title,.main .mod-buy .table-title  {
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px dashed #e7e7e7;
+    background: #eff7f1;
+}
+.main .myorder .table-title h3,.main .mod-buy.table-title h3  {
+    font-size: 14px;
+}
+.main .myorder .table-title a ,.main .mod-buy .table-title a{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #008842;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.main .myorder .j_allorderli .order-none,.main .mod-buy .j_allorderli .order-none {
+    height: 70px;
+    line-height: 70px;
+    padding: 5px 35px;
+    font-size: 14px;
+    text-align: left;
+} 
+.main .mod-buy thead th {
+    font-size: 12px;
+    color: #444;
+    font-weight: normal;
+}
+#historylst {
+    margin: 20px 0 0 25px;
 }
 /*我的优惠券 */
 .main .title {
@@ -639,20 +888,20 @@ u {
     display: none;
 }
 /* 我的悠币 */
-.maincontent .yb {
+.maincontent .myyb {
     margin: 20px 0;
     font-size: 12px;
     color: #444;
 }
-.maincontent .yb strong {
+.maincontent .myyb strong {
     font-weight: normal;
     color: #e93005;
 }
-.maincontent .yb a {
+.maincontent .myyb a {
     color: #ef760a;
     text-decoration: underline;
 }
-.maincontent .yb a.btn-gn {
+.maincontent .myyb a.btn-gn {
     width: 96px;
     height: 26px;
     line-height: 26px;
@@ -712,7 +961,7 @@ u {
     border-collapse: collapse;
     border-spacing: 0;
 }
-.usedtit thead tr,.myyg-table thead tr {
+.usedtit thead tr,.myyg-table thead tr ,.mod-buy thead tr{
     height: 40px;
     background-color: #F7F7F7;
 }
@@ -897,7 +1146,7 @@ u {
    margin-right: 9px;
    background: url(http://static01.yiguo.com/utaste/images/bg_login.png) -20px -200px no-repeat;
 }
-.edit {
+.IRA .edit {
     color: #54a110;
     border-bottom: 1px solid #54a110;
 }
@@ -986,10 +1235,10 @@ u {
     vertical-align: middle;
     background: url(http://static01.yiguo.com/utaste/images/themes/icon_edit.png) no-repeat;
 }
-.si-password div,.si-mail div ,.si-phone div{
+.si-password div,.si-paypass div,.si-mail div,.si-phone div{
     float: left;
 }
-.safe-info li {
+.safe-info .si-password,.safe-info .si-paypass,.safe-info .si-mail,.safe-info .si-phone  {
     padding: 10px 0;
     border-bottom: 1px solid #e6e6e6;
 }
@@ -1001,7 +1250,7 @@ u {
     color:#444;
     border-right: 1px solid #e6e6e6;
 }
-.si-password i,.si-mail i,.si-phone i{
+.safe-info .si-password i,.safe-info .si-paypass i,.safe-info .si-mail i,.safe-info .si-phone i {
     display:inline-block;
     width: 28px;
     height: 28px;
@@ -1009,10 +1258,10 @@ u {
     vertical-align: middle;
     background: url(http://static01.yiguo.com/utaste/images/themes/bg_safe.png) no-repeat;
 }
-.si-password i,.si-phone i {
+.safe-info .finshsp i {
     background-position: 0px 0px;
 }
-.si-mail i {
+.safe-info .continuesp i {
     background-position: -30px 0;
 }
 .safe-info .supply {
@@ -1041,7 +1290,7 @@ u {
     color: #e8380d;
     line-height: 46px;
 }
-.safe-info .editphone-btn {
+.safe-info .editphone-btn ,.safe-info .email-btn{
     color: #008422;
     background: #ffff;
     border: 1px solid #008422;
