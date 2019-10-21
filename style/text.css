@@ -1,0 +1,617 @@
+.container {
+    margin-top: 103px;
+    overflow: hidden;
+}
+body {
+    background: #f7f8f8;
+    font-size: "Microsoft YaHei";
+}
+
+.topBack {
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.navigate-right {
+    width: 500px;
+}
+
+.list {
+    position: relative;
+    top:0px;
+    display: block;
+}
+
+.two {
+    display: none;
+    position: absolute;
+    top: -38px;
+    left: 179px;
+    height: 502px;
+    width: 265px;
+    z-index: 2;
+    border: 1px solid #bbb;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 17px 20px;
+    box-sizing: border-box;
+}
+.show {
+    display: block;
+}
+/* .navigate {
+    width: 178px;
+    position: absolute;
+    top: -559px;
+}.navigate-1 {
+    width: 178px;
+    position: absolute;
+    top:0;
+}
+.nav-items {
+    overflow: hidden;
+    float: left;
+    position: absolute;
+    left: 180px;
+    width: 1020px;
+    height: 37px;
+    line-height: 37px;
+}
+.nav-items ul li {
+    float: left;
+    width: 115px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+} */
+.classify {
+    display: inline-block;
+    background: #008842;
+    width: 180px;
+    height: 38px;
+    font: bold 15px/16px;
+    color: #fff;
+    line-height: 38px;
+    text-align: center;
+}
+
+.list-A {
+    width: 163px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    border-top: 1px solid rgba(255, 255, 255, 0);
+    border-left: 1px solid rgba(255, 255, 255, 0);
+    padding: 9px 0 9px 15px;
+    line-height: 22px;
+    transition: all 2s;
+}
+
+.list-A a {
+    display: inline-block;
+    font: 14px normal;
+    margin-left: 15px;
+    color: #444;
+
+}
+
+.icon-l {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -5px;
+
+}
+
+.icon-one {
+    background: url(../img/nav-icon.png) no-repeat 0px 0px;
+}
+
+.icon-two {
+    background: url(../img/nav-icon.png) no-repeat -25px 0px;
+}
+
+.icon-three {
+    background: url(../img/nav-icon.png) no-repeat -47px 0px;
+}
+
+.icon-five {
+    background: url(../img/nav-icon.png) no-repeat 0px 0px;
+}
+
+.icon-six {
+    background: url(../img/nav-icon.png) no-repeat -96px 0px;
+}
+
+.icon-sev {
+    background: url(../img/nav-icon.png) no-repeat -119px 0px;
+}
+
+.icon-eig {
+    background: url(../img/nav-icon.png) no-repeat -145px 0px;
+}
+
+.icon-nin {
+    background: url(../img/nav-icon.png) no-repeat -169px 0px;
+}
+
+.icon-ten {
+    background: url(../img/nav-icon.png) no-repeat -192px 0px;
+}
+
+.icon-ele {
+    background: url(../img/nav-icon.png) no-repeat -217px 0px;
+}
+
+.icon-thi {
+    background: url(../img/nav-icon.png) no-repeat -243px 0px;
+}
+
+.icon-four {
+    background: url(../img/nav-icon.png) no-repeat -73px 0px;
+}
+
+.content {
+    width: 1200px;
+    margin: auto;
+    position: relative;
+    /* top:-503px; */
+}
+.navigate{
+    width: 180px;
+    position: absolute;
+    top: -558px;
+}
+#top-t {
+    width: 100%;
+    height: 500px;
+    animation: move 3s ease-in;
+}
+.header-nav {
+    width: 100%;
+    height: 38px;
+    z-index: 77;
+    position: relative;
+}
+.list-A:hover {
+    background: #fff;
+    border-right: none;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    /* border-right: 1px solid #fff; */
+
+}
+
+.list-A .navigate-a:after {
+    content: '>';
+    position: absolute;
+    opacity: 0;
+    right: 25px;
+    font-size: 15px;
+}
+
+.list-A:hover .navigate-a {
+    color: #008842;
+    margin-left: 10px;
+    transition: 0.5s;
+
+}
+
+.list-A:hover .icon {
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.list-A:hover .navigate-a:after {
+    opacity: 1;
+
+}
+
+.border-right {
+    border-right: 1px solid #bbb;
+}
+
+.list-A:hover .two {
+    display: block;
+}
+
+.two>a {
+    color: #008842;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.two-one a {
+    margin-right: 30px;
+    color: #686868;
+    font-size: 12px;
+}
+
+.two-one a:hover {
+    color: #008842;
+}
+
+img {
+    border: none;
+}
+
+.two img {
+    position: absolute;
+    bottom: 0;
+
+}
+
+.cont-body {
+    margin-top: 55px;
+    cursor: pointer;
+}
+
+.f1-top i {
+    display: inline-block;
+    width: 31px;
+    height: 18px;
+    margin-right: 10px;
+    padding: 10px 7px 4px 7px;
+    color: #fff;
+    font: bold 14px "Microsoft YaHei";
+    vertical-align: text-bottom;
+    background: url(../img/floor.png) no-repeat left top;
+}
+
+.f1-top h2 {
+    float: left;
+    height: 32px;
+    font-size: 18px;
+}
+
+.f1-top span {
+    float: right;
+    height: 32px;
+    font-size: 12px;
+    line-height: 32px;
+    color: #4e4e4e;
+}
+
+.f1-top span a:hover {
+    text-decoration: underline;
+}
+
+.f1-top {
+    overflow: hidden;
+    margin-bottom: 5px;
+    margin-top: 18px;
+}
+
+.pseudo:after {
+    content: "|";
+    padding: 0 7px;
+
+}
+
+.f1 {
+    overflow: hidden;
+}
+
+.f1-right,
+.f4 {
+    float: left;
+    background: #fff;
+    width: 925px;
+    height: 463px;
+    border-top: 1px solid #d5d5d5;
+    transition: all 2s;
+}
+
+.f1-right li {
+    position: relative;
+    float: left;
+    width: 230px;
+    height: 230px;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    overflow: hidden;
+}
+
+.f1-left {
+    float: left;
+}
+
+.f1-cont {
+    overflow: hidden;
+}
+
+.f1-right img:hover {
+    position: absolute;
+    margin-left: 5px;
+    transition: 0.25s linear;
+}
+
+#f2-i {
+    background-position: -46px 0;
+}
+
+.f1-a {
+    color: #fc5f3c;
+}
+
+.f2-a {
+    color: #007f4d;
+}
+
+.f3-a {
+    color: #45c6ce;
+}
+
+.f4-a {
+    color: #f0c000;
+}
+
+.f5-a {
+    color: #e08683;
+}
+
+.f6-a {
+    color: #b84f00;
+}
+
+.f7-a {
+    color: #764e00;
+}
+
+.f8-a {
+    color: #940606;
+}
+
+.f9-a {
+    color: #3ca3dc;
+}
+
+#f3-i {
+    background-position: -184px 0;
+}
+
+#f4-i {
+    background-position: -92px 0;
+}
+
+#f5-i {
+    background-position: -138px 0;
+}
+
+#f6-i {
+    background-position: -368px 0
+}
+
+#f7-i {
+    background-position: -230px 0;
+}
+
+#f8-i {
+    background-position: -414px 0;
+}
+
+#f9-i {
+    background-position: -531px 0;
+    width: 41px;
+}
+
+.f4-cont {
+    overflow: hidden;
+}
+
+.f4-left,
+.f4,
+.f4 li,
+.f4-z,
+.f4-right,
+.f4a-left {
+    float: left;
+}
+
+.f4 {
+    width: 923px;
+    height: 461px;
+    position: relative;
+    border: 1px solid #d5d5d5;
+
+}
+
+.f4-z {
+    overflow: hidden;
+    width: 442px;
+}
+
+.f4-z li {
+    height: 191px;
+    overflow: hidden;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+
+}
+
+.f4a-left {
+    width: 234px;
+    height: 383px;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    position: relative;
+    overflow: hidden;
+}
+
+.f4-right {
+    height: 461px;
+    width: 246px;
+    position: relative;
+    overflow: hidden;
+}
+
+.f4-bott {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 654px;
+    height: 57px;
+    padding: 10px 11px;
+    border-right: 1px solid #d5d5d5;
+    background: #fff;
+
+}
+
+.f4b-ul {
+    overflow: hidden;
+}
+
+.f4b li {
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.f4b a:hover img {
+    position: absolute;
+    margin-left: 5px;
+    transition: 0.25s linear;
+}
+
+.f4-bott a {
+    display: inline-block;
+    width: 80px;
+    height: 52px;
+    margin: 0 14px;
+    clear: #444;
+}
+
+.f6b li {
+    position: relative;
+    width: 441px;
+    height: 191px;
+    overflow: hidden;
+}
+
+.f6b img:hover {
+    position: absolute;
+    margin-left: 5px;
+    transition: 0.25s linear;
+}
+
+.content-left {
+    width: 40px;
+    height: 360px;
+    position: fixed;
+    top: 50px;
+    left: 95px;
+    text-align: center;
+}
+
+.content-left a {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 41px;
+    font-size: 12px;
+    clear: #444;
+}
+#top-t {
+    width: 100%;
+    height: 500px;
+    animation: move 3s ease-in;
+}
+
+@keyframes move {
+    from {
+        transform: scale(1.3)
+    }
+
+    to {
+        transform: scale(1.2)
+    }
+}
+
+.active  {
+    display: block;
+    /* background: #007f4d; */
+    /* color: #fff; */
+}
+.content-left a span {
+    display: none;
+    width: 24px;
+    height: 29px;
+    padding: 6px 8px;
+    font-style: normal;
+    overflow: hidden;
+    background: #008843;
+    color: #fff;
+}
+.content-left a:hover {
+    background: #008843;
+    color: #fff;
+}
+
+.content-left a:hover span {
+    display: block;
+}
+.content-left a:hover i {
+    display: none;
+}
+
+.content-left a:hover:after {
+    display: none;
+}
+
+.content-left a:after {
+    position: absolute;
+    display: inline-block;
+    top: 40px;
+    left: 15px;
+    content: "";
+    width: 10px;
+    height: 0px;
+    border: 1px solid #ccc;
+    z-index: 100;
+}
+
+.content-left i {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    display: block;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    font-size: 0;
+}
+.sidebar { 
+    display:block; 
+    z-index: 100; 
+    position:fixed; 
+    bottom: 20px; 
+    right: 45%;
+    width:56px; 
+    margin-right: -42%;   
+}
+.sidebar .S-btn { 
+    overflow: hidden; 
+    display: block; 
+    width:50px; 
+    height: 42px; 
+    margin-bottom:10px; 
+    background:url(../img/sidebar.png) no-repeat left top 
+}
+.S-btn.goTop{
+    background-position:0 0;
+}
+.S-btn.customer{
+    background-position:0 -46px;
+}
+.sidebar .goTop:hover{ 
+    background-position:-56px 0;
+}
+.sidebar .customer:hover{ 
+    background-position:-56px -46px;
+}
+
+

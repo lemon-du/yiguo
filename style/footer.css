@@ -1,9 +1,8 @@
 ﻿
-    /* s */
     .act {
-        color: #007f4d !important;
+        color: #007f4d;
     }
-    .helpnav a,.footer-top a {
+    .helpnav a {
         display: inline-block;
         font-size: 12px;
         margin-top: 5px;
@@ -16,8 +15,8 @@
         margin: 10px 0px;
     }
     .footer-top a {
-        color: #444;
-        margin-left:10px;
+        margin:0 10px;
+        text-decoration: none;
     }
     .u-money {
         color: #444;
@@ -57,6 +56,8 @@
         float: right;
         width: 1020px;
         overflow: hidden;
+        color: #818985;
+        font-family: Arial,Verdana,"\5b8b\4f53";
    }
    .green-to {
         color: #008742;
@@ -493,7 +494,7 @@
     }
     .footer .wrap {
         margin: 50px auto 0;
-        padding: 0;
+        width: 1200px;
         overflow: hidden;
     }
     .footer .wrap ul span{
@@ -644,17 +645,17 @@
     .warp-icon5 {
         background-position: 0px -92px;
     }
-    .error h2 {
+    .errors h2 {
         font: bold 30px "Microsoft YaHei";
     }
-    .error {
+    .errors {
         float: right;
         height: 385px;
         padding: 83px 107px 0 74px;
         color: #777;
         border: 0 none ;
     }
-    .error p {
+    .errors p {
         margin-top: 10px;
         font: 16px "Microsoft YaHei";
     }

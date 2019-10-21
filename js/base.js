@@ -356,11 +356,11 @@ $(function(){
         $(this).val() == '' ? $(this).val("输入商品名/编号/拼音").css("background", "#e0e0e0").css("color", "rgb(153, 153, 153)") : $(this).val() == '';
     });
     // 手机易果
-    $(".mobile-a,.con").hover(function () {
-        $(".mobile-a,.con").css("display", "block").addClass("my-Fruits");
+    $(".mobile-a,.con1").hover(function () {
+        $(".mobile-a,.con1").css("display", "block").addClass("my-Fruits");
     }, function () {
-        $(".con").css("display", "none");
-        $(".mobile-a,.con").removeClass("my-Fruits");
+        $(".con1").css("display", "none");
+        $(".mobile-a,.con1").removeClass("my-Fruits");
     });
     // 我的易果
     $(".myyiguo-a,#phone-QR-code").hover(function () {
@@ -371,6 +371,7 @@ $(function(){
     });
     var phonepatt=/^1[3-9]\d{9}$/;
     var passwordpatt=/^[0-9A-z]{6,20}$/;
+    var emailpatt=/^\w+@[0-9 a-z A-Z]+\.[a-z A-Z]{2,4}$/;
     //表单验证
     var timer;
     $("#checkbtn").click(function(){
@@ -380,7 +381,7 @@ $(function(){
             $("#signupbtn").removeAttr("disabled");
             $(".register #signupbtn").css("background","#008422");
             $("#signupbtn").click(function(){
-                if($(".forms .phone").val()=="") {
+                if($(".forms .phone").val().replace(/(^\s*)|(\s*$)/g, "")=="") {
                     if(!$(".forms .phone").next().is("span")) {
                         $(".forms .phone").parent().append(`
                             <span class="pass-tip">
@@ -406,7 +407,7 @@ $(function(){
                             $(".phone").next().html("<i></i>手机号格式不正确"); 
                         }
                     }else {
-                        if($(".ver-code").val()=='') {
+                        if($(".ver-code").val().replace(/(^\s*)|(\s*$)/g, "")=='') {
                             if(!$(".forms .phone").next().is("span")) {
                                 $(".forms .phone").parent().append(`
                                     <span class="pass-tip">
@@ -433,7 +434,7 @@ $(function(){
                                 }
                             }else{
                                 $(".forms .phone").next().remove();
-                                if($(".forms .password").val()==''||$(".forms .confirm-password").val()=='') {
+                                if($(".forms .password").val().replace(/(^\s*)|(\s*$)/g, "")==''||$(".forms .confirm-password").val().replace(/(^\s*)|(\s*$)/g, "")=='') {
                                     if(!$(".forms .confirm-password").next().is("span")) {
                                         $(".forms .confirm-password").parent().append(`
                                             <span class="pass-tip">
@@ -514,7 +515,7 @@ $(function(){
     clearTimeout(timer);
      // 控制确认密码输入框失去焦点时提示信息
     $(".forms .confirm-password").blur(function(){
-        if($(".confirm-password").val()=='') {
+        if($(".confirm-password").val().replace(/(^\s*)|(\s*$)/g, "")=='') {
             if(!$(this).next().is("span")) {
                 $(".confirm-password").parent().append(`
                     <span class="pass-tip">
@@ -526,7 +527,7 @@ $(function(){
         }
     })
     $(".forms .phone").blur(function(){
-        if($(".forms .phone").val()=='') {
+        if($(".forms .phone").val().replace(/(^\s*)|(\s*$)/g, "")=='') {
             if(!$(this).next().is("span")) {
                 $(".phone").parent().append(`
                     <span class="pass-tip">
@@ -537,6 +538,7 @@ $(function(){
             }
         }
     })
+    createCode();
     // 生成随机验证码
     var code;
     function createCode() {  
@@ -552,35 +554,41 @@ $(function(){
         }
         $(".codes").html(code);
     }  
-    createCode();
     // 点击获取验证码出现倒计时
-        var text=60;
-        var timer1;
-        $(".getCode").click(function(){
-            if($(".forms .phone").val()!=''&&phonepatt.test($(".phone").val())){
-                $(this).next().remove();
-                if(!timer1){
-                    timer1=setInterval(function(){
-                        if(text>=0) {
-                            $(".getCode").html("还剩下<span>"+text+"</span>s");
-                            text-=1;
-                        }else {
-                            $(".getCode").html("获取验证码");
-                            clearInterval(timer1);
-                        }
-                    },1000);
-                }
-            }else {
-                if(!$(this).next().hasClass("pass-tip")) {
-                    $(this).after(`
-                        <span class="pass-tip">
-                            <i></i>
-                            请输入正确手机号
-                        </span>
-                    `)
-                }
+    var text=60;
+    var timer1;
+    $(".register .getCode").click(function(){
+        if($(".forms .phone").val().replace(/(^\s*)|(\s*$)/g, "")!=''&&phonepatt.test($(".phone").val())){
+            $(this).next().remove();
+            count();
+        }else {
+            if(!$(this).next().hasClass("pass-tip")) {
+                $(this).after(`
+                    <span class="pass-tip">
+                        <i></i>
+                        请输入正确手机号
+                    </span>
+                `)
             }
-        })
+        }
+    })
+    function count(){
+        if(!timer1){
+            timer1=setInterval(function(){
+                if(text>=0) {
+                    $(".getCode").html("还剩下<span>"+text+"</span>s");
+                    text-=1;
+                }else {
+                    $(".getCode").html("获取验证码");
+                    clearInterval(timer1);
+                }
+            },1000);
+        }
+    }
+    // 忘记密码页面验证身份短信验证码
+    $(".resetpass .getCode").click(function(){
+        count();
+    })
     // 点击切换验证码
     $(".tab").click(function(){
         createCode();
@@ -614,17 +622,17 @@ $(function(){
         $(".mask").show();
     })
     $(".signinbtn").click(function(){
-        if($(".VerifyCode").val()==""||$(".VerifyCode").val().toUpperCase()!=$(".logincode").html().toUpperCase()){
+        if($(".VerifyCode").val().replace(/(^\s*)|(\s*$)/g, "")==""||$(".VerifyCode").val().toUpperCase()!=$(".logincode").html().toUpperCase()){
             $("#msg-wrap").addClass("msg-wrap");
             $("#msg-wrap div").addClass("msg-error");
             $(".msg-error").html("请输入正确的验证码");
         }else {
-            if($(".input-phone").val()=="") {
+            if($(".input-phone").val().replace(/(^\s*)|(\s*$)/g, "")=="") {
                 $("#msg-wrap").addClass("msg-wrap");
                 $("#msg-wrap div").addClass("msg-error");
                 $(".msg-error").html("用户名不能为空");
             }else {
-                if($(".input-key").val()=="") {
+                if($(".input-key").val().replace(/(^\s*)|(\s*$)/g, "")=="") {
                     $("#msg-wrap").addClass("msg-wrap");
                     $("#msg-wrap div").addClass("msg-error");
                     $(".msg-error").html("密码不能为空");
@@ -640,7 +648,7 @@ $(function(){
                         success: function(data){
                             if(data==1) {
                                 localStorage.setItem("value",$(".input-phone").val());
-                                window.location.href="head.html";
+                                window.location.href="myyg.html";
                             }else {
                                 $("#msg-wrap").addClass("msg-wrap");
                                 $("#msg-wrap div").addClass("msg-error");
@@ -669,6 +677,153 @@ $(function(){
     $(".gray").click(function(){
        window.location.href="resetpass1.html";
     })
+    $(".resetpass .btn-green1").click(function(){
+        if($(".resetpass .input-user").val().replace(/(^\s*)|(\s*$)/g, "")==""){
+            if(!$(".resetpass .input-user").next().is("span")){
+                $(".resetpass .input-user").parent().append(`
+                    <span class="pass-tip">
+                        <i></i>
+                        手机号不能为空;
+                    </span>`
+                )
+            }else {
+                $(".resetpass .input-user").next().attr("class","pass-tip");
+                $(".resetpass .input-user").next().html("<i></i>手机号不能为空");
+            }
+        }else {
+            $(".resetpass .input-user").next().remove();
+            if($(".resetpass .ver-code").val().replace(/(^\s*)|(\s*$)/g, "")==""){
+                if(!$(".resetpass .ver-code").next().next().is("span")){
+                    $(".resetpass .ver-code").parent().append(`
+                        <span class="pass-tip">
+                            <i></i>
+                            请输入验证码
+                        </span>` 
+                    )
+                }else {
+                    $(".resetpass .ver-code").next().next().attr("class","pass-tip");
+                    $(".resetpass .ver-code").next().next().html("<i></i>请输入验证码");
+                }
+            }else {
+                $(".resetpass .ver-code").next().next().remove();
+                if($(".resetpass .ver-code").val().toUpperCase()!=$(".codes").html().toUpperCase()){
+                    if(!$(".resetpass .ver-code").next().next().is("span")) {
+                        $(".resetpass .ver-code").parent().append(`
+                            <span class="pass-error">
+                                <i></i>
+                                校验码错误
+                            </span>
+                        `)
+                    }else {
+                        $(".resetpass .ver-code").next().next().attr("class","pass-error");
+                        $(".resetpass .ver-code").next().next().html("<i></i>校验码错误");
+                    }
+                }else{
+                    $(".resetpass .ver-code").next().next().remove();
+                    $.ajax({
+                        type:"POST",
+                        url:"http://localhost/FindPwd.php",
+                        data: {
+                            phone:$(".resetpass .input-user").val()
+                        },
+                        success:function(data){
+                            if(data==1){
+                                $(".resetpass .input-user").next().remove();
+                                window.location.href="resetpass2.html";
+                            }else {
+                                if(!$(".resetpass .input-user").next().next().is("span")){
+                                    $(".resetpass .input-user").parent().append(`
+                                        <span class="pass-error">
+                                            <i></i>
+                                            您输入手机/邮箱不存在;
+                                        </span>`
+                                    )
+                                }else {
+                                    $(".resetpass .input-user").next().attr("class","pass-error");
+                                    $(".resetpass .input-user").next().html("<i></i> 您输入手机/邮箱不存在")
+                                }
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    })
+    // 忘记密码 重置密码 点击按钮
+    $(".resetpass .btn-green2").click(function(){
+        if($(".resetpass .newpass").val().replace(/(^\s*)|(\s*$)/g, "")==""){
+           if(!$(".resetpass .newpass").next().is("span")){
+                $(".resetpass .newpass").parent().append(`
+                        <span class="pass-error">
+                            <i></i>
+                            请输入密码
+                        </span>`
+                    )
+            }
+        }else {
+            $(".resetpass .newpass").next(),remove();
+        }
+    })
+    // 失去焦点设置密码框
+     $(".resetpass .newpass").blur(function(){
+         if( $(this).val().replace(/(^\s*)|(\s*$)/g, "")==""){
+            if(!$(this).next().hasClass("pass-error")){
+                $(this).parent().append(`
+                    <span class="pass-error">
+                        <i></i>
+                        请输入密码
+                    </span>`
+                )
+            }else {
+                $(this).next().html("<i></i> 请输入密码");
+            }
+         }else {
+            if(!passwordpatt.test($(this).val())){
+                if(!$(this).next().hasClass("pass-error")){
+                    $(this).parent().append(`
+                        <span class="pass-error">
+                            <i></i>
+                            密码不能小于6位
+                        </span>`
+                    )
+                }else {
+                    $(this).next().html("<i></i> 密码不能小于6位");
+                }
+            }else{
+                $(this).next().remove();
+            }
+         }
+     })
+    //  失去焦点确认密码框
+    $(".resetpass .cfmpass").blur(function(){
+        if( $(this).val().replace(/(^\s*)|(\s*$)/g, "")==""){
+           if(!$(this).next().hasClass("pass-error")){
+               $(this).parent().append(`
+                   <span class="pass-error">
+                       <i></i>
+                       请输入密码
+                   </span>`
+               )
+           }else {
+               $(this).next().html("<i></i> 请输入密码");
+            }
+        }else {
+            if($(this).val()!=$(".resetpass .newpass").val()){
+                if(!$(this).next().hasClass("pass-error")){
+                    $(this).parent().append(`
+                        <span class="pass-error">
+                           <i></i>
+                           两次密码不一致
+                        </span>`
+                    )
+                }else {
+                   $(this).next().html("<i></i> 两次密码不一致");
+                }
+            }else {
+               $(this).next().remove();
+           }
+        }
+    })
     var key=localStorage.getItem("value");
     //登录到首页
     if(!key) {
@@ -686,12 +841,33 @@ $(function(){
         var phonevalue=keyArr.join("****");
         $(".myphone strong").html(phonevalue);
         $(".user-info .telNum a").html(phonevalue);
+        // ****手机号
+        $(".controls .conls-phonetel").html(key);
+        $(".EidtGroup .EidtGroup-tel").html(phonevalue);
+        // 忘记密码页面验证身份手机号
+        $(".resetpass .user-id").html(phonevalue);
     }
     $("#out").click(function(){
         key=localStorage.removeItem("value");
         $(".login-reg").removeClass("tit-hidden");
         $(".loginout").addClass("tit-hidden");
     })
+    // 验证登陆跳转
+    $(".suggest").click(function(){
+        localStorage.setItem("pageNum",$(this).data("list"));
+        if(!key) {
+            window.location.href="login.html";
+        }else {
+            window.location.href="myyg.html";
+        }
+    }) 
+    $(".s-btn").click(function(){
+        if(!key) {
+            window.location.href="login .html";
+        }else {
+            window.location.href="";
+        }
+    }) 
     // 首页点击我的易果
     $(".nofollow").click(function(){
         localStorage.setItem("pagenum",$(this).data("list"));
@@ -700,7 +876,7 @@ $(function(){
         if(!key) {
             window.location.href="login.html";
         }else {
-            window.location.href="head.html";
+            window.location.href="myyg.html";
         }
     })
     if(localStorage.getItem("content")) {
@@ -712,6 +888,13 @@ $(function(){
         $(".main").eq(localStorage.getItem("pagenum")).removeClass("hidden").siblings().addClass("hidden");
         $(".l-menu a").eq(localStorage.getItem("pagenum")-1).addClass("on");
         localStorage.removeItem("pagenum");
+    }
+    if(localStorage.getItem("pageNum")){
+        $(".mygnav .nownav").removeClass("hidden");
+        $(".main").eq(localStorage.getItem("pageNum")).removeClass("hidden").siblings().addClass("hidden");
+        $(".l-menu a").eq(localStorage.getItem("pageNum")-1).addClass("on");
+        $(".mygnav .nownav .m-order").html($(".l-menu a").eq(localStorage.getItem("pageNum")-1).html());
+        localStorage.removeItem("pageNum");
     }
     // 点击我的易果左侧列表
     $(".l-menu a").click(function(){
@@ -725,7 +908,11 @@ $(function(){
     // 点击我的易果标题
     $(".myyiguo-a").click(function(){
         localStorage.setItem("page",$(this).data("list"));
-        window.location.href="head.html";
+        if(!key) {
+            window.location.href="login.html";
+        }else {
+            window.location.href="myyg.html";
+        }
     })
     if(localStorage.getItem("page")) {
         $(".mYg").addClass("m-order");
@@ -738,21 +925,30 @@ $(function(){
         $(".main").eq(0).removeClass("hidden").siblings().addClass("hidden");
     })
     // 我的易果详情页我的易果部分
-        $(".user-info .info-lcol .modify,.user-info .u-safe  a").click(function(){
+        $(".user-info .info-lcol .modify,.user-info .u-safe a").click(function(){
+            $(".mYg").removeClass("m-order");
+            $(".mygnav .nownav").removeClass("hidden");
+            $(".m-order").html($(".l-menu .menu-list2").html());
             $(".personal").removeClass("hidden");
             $(".myygcontent").addClass("hidden");
             $(".l-menu a").removeClass("on");
             $(".l-menu .menu-list2").addClass("on");
         })
         $(".myorder .all").click(function(){
+            $(".mYg").removeClass("m-order");
             $(".myordercontent").removeClass("hidden")
             $(".myygcontent").addClass("hidden");
+            $(".mygnav .nownav").removeClass("hidden");
+            $(".m-order").html($(".l-menu .menu-list1").html());
             $(".l-menu a").removeClass("on");
             $(".l-menu .menu-list1").addClass("on");
         })
         $(".mod-buy .all").click(function(){
-            $(".goodscontent").removeClass("hidden")
+            $(".mYg").removeClass("m-order");
+            $(".goodscontent").removeClass("hidden");
             $(".myygcontent").addClass("hidden");
+            $(".mygnav .nownav").removeClass("hidden");
+            $(".m-order").html($(".l-menu .menu-list3").html());
             $(".l-menu a").removeClass("on");
             $(".l-menu .menu-list3").addClass("on");
         })
@@ -830,6 +1026,8 @@ $(function(){
     // 账户安全部分
     // 点击修改,邮箱验证,手机验证跳转到个人资料页面
     $(".IRA .edit,.email-btn,.editphone-btn").click(function(){
+        $(".mygnav .nownav").removeClass("hidden");
+        $(".m-order").html($(".l-menu .menu-list2").html());
         $(".IRA").addClass("hidden");
         $(".personal").removeClass("hidden");
         $(".l-menu a").removeClass("on");
@@ -837,11 +1035,13 @@ $(function(){
     })
     // 点击账户安全中的修改密码按钮
     $(".editpass-btn").click(function(){
+        $(".mygnav .nownav").addClass("hidden");
         $(".IRA").addClass("hidden");
         $(".editpass").removeClass("hidden");
     })
     // 点击账户安全中设置密码按钮
     $(".setpass-btn").click(function(){
+        $(".mygnav .nownav").addClass("hidden");
         $(".IRA").addClass("hidden");
         $(".setpass").removeClass("hidden");
     })
@@ -958,6 +1158,116 @@ $(function(){
     $(".controls .green").click(function () {
         $(".qiye").css("display", "block");
     })
+    // 我的资料中未验证，出现的input框
+    $(".EidtGroup .edits").click(function(){
+        $(this).addClass("hidden");
+        $(".EidtGroup .input").removeClass("hidden");
+    })
+    $(".controls .bindEmail").click(function(){
+        if(!emailpatt.test($(".EidtGroup .input").val())){
+            $(".myMessage-mark").fadeIn(200);
+            $(".popout-wrap").removeClass("hidden");
+            $(".popout-cons .cons p").html("邮箱格式不正确！");
+            $(".btnbox .confirm").click(function(){
+                $(".myMessage-mark").fadeOut(200);
+                $(".popout-wrap").addClass("hidden");
+            })
+        }else {
+            var inputVal=$(".EidtGroup .input").val();
+            var emailArr=[];
+            emailArr.push(inputVal.slice(0,1));
+            emailArr.push(inputVal.slice(inputVal.length-8,inputVal.length+1));
+            var emailvalue=emailArr.join("****");
+            $(".EidtGroup .span-email").html(emailvalue);
+            $(".myemail strong").html(emailvalue);
+            $(".EidtGroup .input").addClass("hidden");
+            $(".EidtGroup .span-edit").addClass("hidden");
+            $(".span-bindEmail").addClass("hidden");
+            $(".EidtGroup .a-change").removeClass("hidden");
+        }
+    })
+    $(".EidtGroup .a-change").click(function(){
+        $(this).addClass("hidden");
+        $(".EidtGroup .span-email").addClass("hidden");
+        $(".EidtGroup .input").removeClass("hidden");
+    })
+    // 实现出生日期的联动效果
+    $("#Birthday-month").change(function(){
+        $("#Birthday-day").empty();
+        var month=$(this).val();
+        var day;
+        if(month==4||month==6||month==9||month==11){
+            day=30;
+        }else {
+            if(month==2){
+                day=28;
+            }else {
+                day=31;
+            }
+        }
+        var staOption=$("<option value='' selected>请选择</option>");
+        $("#Birthday-day").append(staOption);
+        for(var i=1;i<day+1;i++){
+            var option=$("<option value=" + i + ">" + i + "</option>");
+            $("#Birthday-day").append(option);
+        }
+    })
+    // 确定按钮功能实现
+    $(".controls .btn-green").click(function(){
+        var fillNames=$(".EidtGroup #RealName").val();
+        var fillName=fillNames.replace(/(^\s*)|(\s*$)/g, "");
+        var inputVal=$(".EidtGroup .input").val();
+        if(!inputVal==""&&emailpatt.test($(".EidtGroup .input").val())){
+            var emailArr=[];
+            emailArr.push(inputVal.slice(0,1));
+            emailArr.push(inputVal.slice(inputVal.length-8,inputVal.length+1));
+            var emailvalue=emailArr.join("****");
+            $(".EidtGroup .span-email").html(emailvalue);
+            $(".EidtGroup .span-email").removeClass("hidden");
+            $(".EidtGroup .a-change").removeClass("hidden");
+            $(".EidtGroup .input").addClass("hidden");
+            $(".span-bindEmail").addClass("hidden");
+        }
+        if(fillName.length>10){
+            $(".EidtGroup .passlen-tip").removeClass("hidden");
+            $(".EidtGroup .passlen-tip").html($(".EidtGroup .passlen-tip").html().replace("必填","长度不能超过10个汉字"))
+        }else {
+            if(fillName.length==0){
+                $(".EidtGroup .passlen-tip").html($(".EidtGroup .passlen-tip").html().replace("长度不能超过10个汉字","必填"));
+                $(".EidtGroup .passlen-tip").removeClass("hidden");
+            }else {
+                $(".EidtGroup .passlen-tip").addClass("hidden");
+                if(!emailpatt.test($(".EidtGroup .input").val())){
+                    $(".myMessage-mark").fadeIn(200);
+                    $(".popout-wrap").removeClass("hidden");
+                    $(".popout-cons .cons p").html("邮箱格式不正确！");
+                    $(".btnbox .confirm").click(function(){
+                        $(".myMessage-mark").fadeOut(200);
+                        $(".popout-wrap").addClass("hidden");
+                    })
+                }else {
+                    $(".EidtGroup .span-realname").html($(".EidtGroup #RealName").val());
+                    $(".EidtGroup .span-realname").removeClass("hidden");
+                    $(".myMessage-mark").fadeIn(200);
+                    $(".popout-cons .cons p").html("保存成功");
+                    $(".popout-wrap").removeClass("hidden");
+                    $(".btnbox .confirm").click(function(){
+                        $(".myMessage-mark").fadeOut(200);
+                        $(".popout-wrap").addClass("hidden");
+                    })
+                    $(".EidtGroup .span-realname").html($(".EidtGroup #RealName").val());
+                    $(".EidtGroup #RealName").addClass("hidden");
+                    $(".EidtGroup .passlen-tip").addClass("hidden");
+                    $(".EidtGroup .b-change").removeClass("hidden");
+                    $(".EidtGroup .b-change").click(function(){
+                        $(".EidtGroup .b-change").addClass("hidden");
+                        $(".EidtGroup .span-realname").addClass("hidden");
+                        $(".EidtGroup #RealName").removeClass("hidden");
+                    })
+                }
+            }
+        }
+    })
     //点击发送验证码倒计时
     $("#ReSendCode").click(function(){
         $(this).addClass("hidden");
@@ -976,7 +1286,9 @@ $(function(){
     // 设置密码验证
     var patt=/^\d{6}$/;
     $(".setpass .btn").click(function(){
-        if($(".infoCode").val()=="") {
+        var infocodes=$(".infoCode").val();
+        var infocode=infocodes.replace(/(^\s*)|(\s*$)/g, "");
+        if(infocode=="") {
             $(".popout-content>.content>p").text("请输入验证码");
             $(".Dailog-poput").css("display","block");
         }else {
@@ -1015,10 +1327,6 @@ $(function(){
                 }
             }
         }
-    })
-    // 忘记密码 重置密码
-    $(".resetpass .btn-green1").click(function(){
-
     })
 })
     

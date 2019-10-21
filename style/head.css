@@ -38,6 +38,7 @@
     position: fixed;
     text-align: center;
     background: url("../img/header_fixed_bg.png") repeat;
+    z-index: 99;
 }
 .Bounced-content {
     height: 36px;
@@ -192,7 +193,7 @@
     padding: 8px;
     height: 16px;
     margin: 0px 5px 0px 0px;
-    background-image: url(img/header-img.png);
+    background-image: url("../img/header-img.png");
     background-position: -174px 7px;
     background-repeat: no-repeat;
 }
@@ -222,7 +223,7 @@
     padding: 0px 15px;
     overflow: hidden;
 }
-.active {
+.active2 {
     float: left;
     width: 86px;
     height: 32px;
@@ -519,7 +520,7 @@ strong {
     border-left: 1px solid #f7f9f8;
     border-right: 1px solid #f7f9f8;
 }
-.con {
+.con1 {
     position: absolute;
     top: 29px;
     z-index: 1;
@@ -545,7 +546,7 @@ strong {
     height: 125px;
 }
 .font-title {
-    width: 84px;
+    width: 85px;
     height: 14px;
     margin: auto;
     font-size: 12px;
@@ -623,7 +624,7 @@ strong {
     margin-left: 10px;
     border-radius: 16px;
     background: #008842;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .my-Fruits {
     background-color: #fff;

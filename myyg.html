@@ -13,6 +13,21 @@
     <title>易果生鲜</title>
 </head>
 <body>
+    <!-- 我的易果--我的资料出现的遮罩层-->
+    <div class="myMessage-mark"></div>
+    <div class="popout-wrap hidden">
+        <div class="popout-cons">
+            <div class="title">
+                <i></i>提示
+            </div>
+            <div class="cons">
+                <p>邮箱格式不正确！</p>
+                <div class="btnbox">
+                    <a class="confirm" href="javascript:void(0)">确定</a>
+                </div>
+            </div>
+        </div> 
+    </div>
     <!-- 整体div -->
     <div class="yiguo-box">
         <!-- 头部隐藏部分 -->
@@ -4136,7 +4151,7 @@
                     <li class="pay"><a href="#" class="pay-a hover"><i class="i-d i-a"></i>礼品卡绑定</a></li>
                     <li class="mobile">
                         <a href="javascript:void(0)" class="mobile-a hover"><i class="i-b i-a"></i>手机易果<b class="b"></b></a>
-                        <div class="con">
+                        <div class="con1">
                             <img src="img/qrcode_app.png" alt="" id="QR-code-photo">
                             <p class="font-title">扫一扫下载APP</p>
                             <img src="img/qrcode_wechat.png" alt="" id="QR-code-photo">
@@ -4193,7 +4208,7 @@
         <!-- 我的易果内容 -->
         <div class="wrap">
             <div class="mygnav">
-                <a href="javascript:void(0)" class="ygindex">首页</a>
+                <a href="index.html" class="ygindex">首页</a>
                 >
                 <a href="javascript:void(0)" class="mYg" data-list="0">我的易果</a>
                 <span class="nownav hidden">><a href="javascript:void(0)" class="m-order"></a></span>
@@ -4229,7 +4244,7 @@
                         </dl>
                     </div>
                 </div>
-                <!-- 右面内容 -->
+                 <!-- 右面内容 -->
                 <div class="content-r">
                     <!-- 我的易果 -->
                     <div class="main myygcontent hidden" data-page="0">
@@ -4286,7 +4301,7 @@
                             <div class="order-list-body">
                                 <ul class="j_allorderli">
                                     <div class="order-none">亲爱的易果用户，您目前尚无记录呦～
-                                        <a href="javascript:void(0)">快去逛逛吧</a>～
+                                        <a href="index.html">快去逛逛吧</a>～
                                     </div>
                                 </ul>
                             </div>
@@ -4310,7 +4325,7 @@
                             <div class="order-list-body">
                                 <ul class="j_allorderli">
                                     <div class="order-none">亲爱的易果用户，您目前尚无记录呦～
-                                        <a href="javascript:void(0)">快去逛逛吧</a>～
+                                        <a href="index.html">快去逛逛吧</a>～
                                     </div>
                                 </ul>
                             </div>
@@ -4352,7 +4367,7 @@
                             <div class="order-list-body">
                                 <ul class="j_allorderli">
                                     <div class="order-none">亲爱的易果用户，您目前尚无记录呦～
-                                        <a href="javascript:void(0)">快去逛逛吧</a>～
+                                        <a href="index.html">快去逛逛吧</a>～
                                     </div>
                                 </ul>
                             </div>
@@ -5024,8 +5039,12 @@
                                     <div class="control-label">真实姓名</div>
                                     <div class="controls">
                                         <span class="EidtGroup">
+                                                <span class="span-realname"></span>
+                                                <a class="edit b-change hidden" href="javascript:void(0)">
+                                                    <i></i>修改
+                                                </a>
                                             <input type="text" id="RealName" placeholder="请输入您的真实姓名">
-                                            <span class="pass-tip">
+                                            <span class="passlen-tip">
                                                 <i></i>
                                                 长度不能超过10个汉字
                                             </span>
@@ -5035,14 +5054,14 @@
                                 <div class="control-group">
                                     <div class="control-label">用户名</div>
                                     <div class="controls">
-                                        <span>15188589022</span>
+                                        <span class="conls-phonetel"></span>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="control-label">手机</div>
                                     <div class="controls">
                                         <span class="EidtGroup">
-                                            <span>151****9022</span>
+                                            <span class="EidtGroup-tel"></span>
                                             <span class="green">（修改绑定手机请在易果APP上操作）</span>
                                             <div>
                                                 <img src="http://static01.yiguo.com/www/images/header/qrcode_app.jpg" width="125" height="125">
@@ -5054,11 +5073,16 @@
                                     <div class="control-label">邮箱</div>
                                     <div class="controls">
                                         <span class="EidtGroup">
-                                            <span>
-                                                <a class="edit" href="javascript:void(0)">未验证</a>
+                                            <span class="span-email"></span>
+                                            <a class="edit a-change hidden" href="javascript:void(0)">
+                                                <i></i>修改
+                                            </a>
+                                            <span class=" span-edit">
+                                                <a class="edits" href="javascript:void(0)">未验证</a>
                                             </span>
+                                            <input type="text" class="input hidden">
                                         </span>
-                                        <span>
+                                        <span class="span-bindEmail">
                                             <a href="javascript:void(0)" class="bindEmail">邮箱验证</a>
                                         </span>
                                     </div>
@@ -5078,7 +5102,7 @@
                                 <div class="control-group">
                                     <div class="control-label">生日</div>
                                     <div class="controls">
-                                        <select name="" id="" class="Birthday">
+                                        <select name="" id="Birthday-year" class="Birthday">
                                             <option value="">请选择</option>
                                             <option value="1900">1900</option>
                                             <option value="1901">1901</option>
@@ -5201,7 +5225,7 @@
                                             <option value="2018">2018</option>
                                             <option value="2019">2019</option>
                                         </select>年
-                                        <select name="" id="" class="Birthday">
+                                        <select name="" id="Birthday-month" class="Birthday">
                                             <option value="">请选择</option>
                                             <option value="1" selected>1</option>
                                             <option value="2">2</option>
@@ -5216,7 +5240,7 @@
                                             <option value="11">11</option>
                                             <option value="12">12</option>
                                         </select>月
-                                        <select name="" id="" class="Birthday">
+                                        <select name="" id="Birthday-day" class="Birthday">
                                             <option value="">请选择</option>
                                         </select>
                                     </div>
@@ -5254,6 +5278,7 @@
                                 <div class="field"><i></i>邮箱验证</div>
                                 <div class="supply">
                                     邮箱将是您的有效身份证，在保证安全的同时还可以提供密码找回，消息推送服务
+                                    <p class="myemail">您的验证邮箱：<strong></strong></p>
                                 </div>
                                 <div class="operate"><a href="javascript:void(0)" class="btn-green email-btn">邮箱验证</a></div>
                             </li>
@@ -5410,9 +5435,9 @@
                     <!-- 投诉建议 -->
                     <div class="main maincontent complain hidden">
                         <div class="title">投诉建议</div>
-                        <h1>您如果对我们的产品和服务不满意或有好的建议，请您联系<a style="color:blue;text-decoration:underline;" href="http://www.yiguo.com" onclick="WriteComplainCookie();">在线客服</a>，我们的客服专员将会为您提供最优质的服务!</h1>
+                        <h1>您如果对我们的产品和服务不满意或有好的建议，请您联系<a style="color:blue;text-decoration:underline;" href="index.html">在线客服</a>，我们的客服专员将会为您提供最优质的服务!</h1>
                     </div>
-                      <!--账户安全中的修改密码 -->
+                    <!--账户安全中的修改密码 -->
                     <div class="main maincontent editpass hidden">
                         <div class="sub-title">修改密码</div>
                         <form action="" method="POST">
@@ -5443,7 +5468,7 @@
                                 <a href="javascript:void(0)" class="btn-green">确认</a>
                             </div>
                         </form>
-                          <!--消息提醒 -->
+                            <!--消息提醒 -->
                         <div class="qypopout Dailog-poput">
                             <div class="popout-wrap">
                                 <div class="popout-content">
@@ -5489,8 +5514,8 @@
                         <div class="controls btn">
                             <a href="javascript:void(0)" class="btn-green">确认</a>
                         </div>
-                         <!--消息提醒 -->
-                         <div class="qypopout Dailog-poput ">
+                            <!--消息提醒 -->
+                            <div class="qypopout Dailog-poput ">
                                 <div class="popout-wrap">
                                     <div class="popout-content">
                                         <div class="title"><i></i>提 示</div>
@@ -5545,7 +5570,8 @@
                         <li><a href="footer15.html">退换货政策</a></li>
                         <li><a href="footer16.html">退换货流程</a></li>
                         <li><a href="footer17.html">常见问题</a></li>
-                        <li><a href="login.html">投诉与建议</a></li>
+                        <li><a href="javascript:void(0)" class="suggest" data-list="14">投诉与建议</a></li>
+                        <li><a href="footer18.html">极速退款</a></li> 
                     </ul>
                 </div>
             <div class="col">

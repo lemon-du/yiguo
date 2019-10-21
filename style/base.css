@@ -143,10 +143,10 @@
     padding-top: 50px;
     border-left: 1px dotted #a5c9b6;
 }
-.phone,.password,.confirm-password,.invicode {
+.phone,.password,.confirm-password,.invicode,.resetpass .newpass,.resetpass .cfmpass {
     background: url(https://login.yiguo.com/Content/img/bg_input.png) no-repeat;
 }
-.password,.confirm-password,.invicode {
+.password,.confirm-password,.invicode,.resetpass .newpass,.resetpass .cfmpass {
     background-position: 275px -68px;
 }
 .phone {
@@ -155,7 +155,7 @@
 .pass-error {
     color: red;
 }
-.register i {
+.pass-error i {
     display: inline-block;
     width: 17px;
     height: 17px;
@@ -649,7 +649,7 @@ strong {
     top: -1px;
     width: 17px;
     height: 122px;
-    z-index: 1;
+    z-index: 0;
     background: url(http://static01.yiguo.com/utaste/images/info-line.jpg) no-repeat;
 }
 .user-info .info-rcol {
@@ -1138,6 +1138,102 @@ u {
    margin-right: 15px;
    border: 1px solid #c1c1c1;
 } 
+.passlen-tip i {
+   width: 17px;
+   height: 17px;
+   vertical-align: middle;
+   display: inline-block;
+   margin-right: 9px;
+   background: url(http://static01.yiguo.com/utaste/images/bg_login.png) -20px -200px no-repeat;
+}
+.EidtGroup .edit,.EidtGroup .edits {
+    color: #54a110;
+    border-bottom: 1px solid #54a110;
+}
+/* 新加的样式 */
+.EidtGroup .input {
+    width: 284px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    margin-right: 15px;
+    border: 1px solid #c1c1c1;
+}
+/* 遮罩层 */
+.myMessage-mark {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,.3);
+}
+/* 遮罩层弹窗 */
+.popout-wrap {
+    width: 418px;
+    height: auto;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -210px;
+    margin-top: -98px;
+    background: #fff;
+    border: 1px solid #008842;
+}
+.popout-cons .title {
+    position: relative;
+    padding: 7px 3px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background: #008842;
+}
+.popout-cons .title i {
+    vertical-align: middle;
+    display: inline-block;
+    width: 13px;
+    height: 16px;
+    margin-right: 10px;
+    background: url(http://static01.yiguo.com/utaste/images/promotion-img.png) no-repeat -62px -39px;
+}
+.popout-cons .cons {
+    padding: 25px 30px;
+    line-height: 22px;
+    font-size: 12px;
+}   
+.popout-cons .cons p {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 15px;
+} 
+.popout-cons .cons .btnbox {
+    margin-top: 45px;
+    text-align: center;
+}
+.btnbox .confirm {
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    margin: 0 20px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #008842;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #008842;
+}
+.EidtGroup .a-change,.EidtGroup .b-change {
+    margin-left: 10px;
+}
+.EidtGroup .a-change i,.EidtGroup .b-change i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    color: #54a110;
+    background: url(http://static01.yiguo.com/utaste/images/icon_edit.png) no-repeat;
+    vertical-align: middle;
+}
 .pass-tip i {
    width: 17px;
    height: 17px;
@@ -1295,7 +1391,7 @@ u {
     background: #ffff;
     border: 1px solid #008422;
 }
-.myphone strong {
+.myphone strong,.myemail strong {
     color: #333;
 }
 /* 企业福利 */
