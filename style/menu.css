@@ -1,0 +1,210 @@
+body {
+    color: #444;
+    font-size: 12px;
+    background: #f7f8f8;
+    font-family: Arial,Verdana,"\5b8b\4f53";
+    word-break: break-all;
+    word-wrap: break-word;
+}
+/*新品专区  优质生活*/
+.food_container {
+    background: url(http://img12.yiguoimg.com/d/items/2018/180911/9288731002021163_1920x5944.jpg) no-repeat top center #efefef;
+}
+.life_container {
+    background: url(http://img10.yiguoimg.com/d/items/2018/180911/9288731002152235_1920x5944.jpg) no-repeat top center #efefef;
+}
+.new_banner {
+    width: 1147px;
+    margin: auto;
+}
+.all_content {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clearfix {
+    overflow: hidden;
+}
+.food_product {
+    float: left;
+    position: relative;
+    color: #444;
+    width: 228px;
+    height: 330px;
+    padding: 6px;
+    background: #fff;
+}
+.foodProduct {
+     margin: 0 0 25px 13px;
+}
+.foodImg img {
+    width: 228px;
+    height: 228px;
+}
+.foodName {
+    height: 40px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.foodName a {
+    color: #444;
+}
+.foodName a:hover {
+    color: #e8340c;
+}
+.food_bottom {
+    margin-top: 11px;
+}
+.foodPrice {
+    float: left;
+    width: 125px;
+    color: #e8340c;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.foodPrice strong {
+    color: #e8340c;
+    font-size: 21px;
+    margin-left: -5px;
+}
+.disabled {
+    float: right;
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    font-size: 12px;
+    background: #969696;
+    border-radius: 25px;
+    text-align: center;
+    cursor: default;
+}
+.btn-buys {
+    background: #e8340c;
+}
+.foodBuy:hover {
+    text-decoration: none;
+}
+.btn-buys:hover {
+    color: #fff;
+    background: #f15630;
+    cursor: pointer;
+}
+/* 菜谱专栏 */
+.menu_container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Nutritional_life {
+    margin-bottom: 20px;
+}
+/* 导航 */
+.list_cate {
+    float: left;
+    height: 27px;
+    margin: 5px 20px 5px 0px;
+    cursor: pointer;
+}
+.list_title {
+    display: inline-block;
+    font-size: 14px;
+    color: #85b100;
+}
+.list_title img {
+    float: left;
+    height: 27px;
+    margin-right: 5px;
+}
+.list_title span {
+    float: left;
+    line-height: 27px;
+    padding: 0 5px;
+}
+.list_title:hover span {
+    color: #fff;
+    background:  #85b100;
+} 
+.cate_on span{
+    color: #fff;
+    background:  #85b100;
+}
+/* 易食谱 */
+.menu_middle {
+    padding: 20px 0 50px 0;
+}
+.menu_title {
+    color: #85b100;
+    font: bold 18px "Microsoft YaHei";
+    padding-bottom: 3px;
+    border-bottom: 2px solid #85b100;
+}
+.menu_title i {
+    display: inline-block;
+    width: 27px;
+    height: 31px;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+    background: url(http://static01.yiguo.com/article/images/recipe/recipe_icon.png) no-repeat 0 -109px;
+}
+.menu_all {
+    overflow: hidden;
+    display: none;
+}
+.menu_on {
+    display: block;
+}
+.menu_detail {
+    float: left;
+    width: 270px;
+    padding: 10px;
+    margin: 5px 0px 10px;
+    background: #fff;
+    border: 1px solid #fff;
+}
+.menuDetail {
+    margin: 5px 0px 10px 10px;
+}
+.menu_detail:hover {
+    border: 1px solid #85b100;
+}
+.menu_img img{
+    width: 270px;
+    height: 270px;
+}
+.menu_info {
+    padding: 10px 0;
+}
+.menu_name a {
+    display: inline-block;
+    color: #444;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+.menu_name a:hover {
+    color: #85b100;
+    text-decoration: underline;
+}
+.like_num {
+    color: #85b100;
+}
+.like_num i {
+    display: inline-block;
+    width: 18px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/article/images/recipe/recipe_guide.png) no-repeat -3px -75px;
+}
+/* 会员权益 */
+.member_container {
+    background: url(http://img09.yiguoimg.com/e/items/2017/170321/9288705468408437_1920x5923.jpg) no-repeat top center #efefef;
+}
+.vip_container {
+    font-size: 0;
+    background: url(http://img09.yiguoimg.com/e/items/2017/170406/9288706211357318_1920x3831.jpg) no-repeat top center #efefef;
+}

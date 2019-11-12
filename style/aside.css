@@ -1,0 +1,187 @@
+.f-detail{
+    width:100%;
+    background: #f7f8f8;
+    font-size: 12px; 
+    font-family: Arial,Verdana,"\5b8b\4f53";
+    color: #444;
+}
+.f-detail a{
+    color:#444;
+    outline:none;
+} 
+.f-list{
+   width:1200px;
+   height:38px;
+   margin: 0 auto;
+}
+.f-listLeft{
+   float:left;
+   position: relative;
+}
+.f-listLeft1{
+   width: 180px;
+   height: 38px;
+   text-align: center;
+   background:#008842;
+}
+.f-listLeft1>span{
+    color: #fff;
+    padding:11px 0;
+    font:bold 15px/16px  "Microsoft YaHei";
+    height: 16px;
+    display:block;
+}
+.f-listLeft1:hover .f-listLeft2 ul{
+    display: block;
+}
+.f-listLeft2 { 
+    background: rgba(255,255,255,0.9);
+}
+.f-listLeft2 ul{
+    display: none;
+    height:462px;
+    position: absolute;
+    background-color:#fff;
+    opacity: .9;
+    z-index:10;
+}
+.f-listLeft1:hover .f-listH{
+    display:block;
+}
+.f-listHide1 .f-one{
+    display:block;
+    width:134px;
+    height:22px;
+    border:  solid transparent; 
+    padding:9px 45px 9px 0px;
+    font:normal 14px/24px "Microsoft YaHei";
+    position:relative;
+    z-index:10;
+    border-width: 1px 0px 1px 1px;
+    transition: ease 0.2s;
+    cursor: pointer;
+
+}
+.f-listHide1>a:hover{
+    display:inline-block;
+    width:135px;
+    background: #fff; 
+    color:#008842; 
+    padding:9px 35px 9px 10px;
+    border:  solid #bbb; 
+    border-width: 1px 0px 1px 1px;
+ }
+.f-listHide1:hover span{
+    display:block;
+}
+.f-listHide1:hover .f-listName{
+    display:block;
+}
+.f-listLeft2 .f-one i{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    margin-right:15px;
+    vertical-align:middle;
+}
+.f-one1 i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat 0 0;
+}
+.f-two i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -24px 0;
+}
+.f-three i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -48px 0;
+}
+.f-four i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -72px 0;
+}
+.f-five i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat 0 0;
+}
+.f-six i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -96px 0;
+}
+.f-seven i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -120px 0;
+}
+.f-eight i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -144px 0;
+}
+.f-nine i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -168px 0;
+}
+.f-ten i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -192px 0;
+}
+.f-eleven i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -216px 0;
+}
+.f-twelve i{
+    background:url('http://static01.yiguo.com/www/images/header/nav-icon.png') no-repeat -240px 0;
+}
+.f-listName{
+    width:215px;
+    height:464px;
+    padding:17px 20px;
+    position:absolute;
+    top:-38px;
+    left:180px;
+    background:rgba(255,255,255,0.9);
+    z-index:8;
+    border: 1px solid #bbb;
+    display:none;
+}
+.f-fruitTitle{
+    margin-bottom:10px;
+}
+.f-fruitTitle a{
+    text-decoration: underline;
+    font-size:18px;
+    color: #008842;
+    margin-left:-140px;
+}
+.f-listHide1 span{
+    display:none;
+    position:absolute;
+    top:7px;
+    right:18px;
+    text-decoration: none;
+}
+.f-fruitName{
+    height:220px;
+}
+.f-fruitName a{
+    margin-right:30px;
+    color:#686868;
+    line-height: 25px;
+    float:left;
+}
+.f-fruitName a:hover{
+    color: #008842;
+}
+.f-listImg{
+    position:absolute;
+    margin-bottom:10px;
+}
+.f-listImg a{
+    display:block;
+}
+.f-listRight{
+    width:1020px;
+    height:37px;
+    line-height:37px;
+    border-bottom:1px solid #008842;
+    float:left;
+}
+.f-listRight ul li{
+    float:left;
+    width:115px;
+    text-align:center;
+    font-size:15px;
+    font-weight:bold;
+    list-style:none;
+}
+.f-listRight ul li a:hover{
+    color:#008842;
+}

@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+.zflast-page {
+    background: #e6e6e6;
+}
+.topbar {
+    width: 100%;
+    height: 26px;
+    font: 12px/1.5 tahoma,arial,\5b8b\4f53;
+    background: url(https://i.alipayobjects.com/e/201305/OzLou0mHd.png) repeat-x 0 0;
+}
+.topbar-wrap {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.topbar .topbar-wrap a {
+    padding-right: 0;
+    text-decoration: none;
+}
+.topbar .topbar-wrap a, .topbar .topbar-wrap span {
+    float: right;
+    color: #fff;
+    padding: 4px 15px;
+    background: url(https://i.alipayobjects.com/e/201305/OzUPukVET.png) no-repeat 0 7px
+}
+#zf-header {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    margin-top: 0px;
+}
+#zf-header .header-container {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.header-container .header-title {
+    width: 250px;
+    height: 60px;
+    float: left;
+    overflow: hidden;
+} 
+.header-container .header-title .alipay-logo {
+    width: 114px;
+    position: relative;
+    left: 0;
+    top: 10px;
+    float: left;
+    height: 40px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(https://t.alipayobjects.com/images/T1HHFgXXVeXXXXXXXX.png);
+}
+.header-title .logo-title {
+    height: 20px;
+    color: #676d70;
+    float: left;
+    margin: 15px 0 0 10px;
+    padding: 10px 0 0 10px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Microsoft YaHei",微软雅黑,"宋体";
+    border-left: 1px solid #676d70;
+}
+.zf-container {
+    width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.zf-container .J_order {
+    position: relative;
+}
+.zf-container .J_order #order {
+    position: relative;
+    margin-top: 15px;
+}
+#order .orderDetail-base {
+    position: relative;
+    padding: 16px 23px;
+    color: #000;
+    background: #e6e6e6;
+    border-bottom: 3px solid #bbb;
+}
+.order-extand-explain {
+    overflow: hidden;
+}
+.explain-trigger-area {
+    float: left;
+    font: 12px/1.5 tahoma,arial,\5b8b\4f53;
+}
+.explain-trigger-area .J_questionIcon {
+    cursor: pointer;
+    color: #08c;
+}
+.orderDetail-base .commodity-message-row {
+    height: 22px;
+    overflow: hidden;
+    padding-top: 14px;
+}
+.commodity-message-row .long-content {
+    color: #000;
+    float: left;
+    font-weight: 800;
+    font-size: 14px;
+    font-family: tahoma,arial,宋体;
+}
+.commodity-message-row .short-content {
+    max-width: 165px;
+    margin-left: 20px;
+    float: left;
+    margin-top: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: 12px tahoma,arial,\5b8b\4f53;
+}
+.orderDetail-base .payAmount-area {
+    font-size: 12px;
+    bottom: 36px;
+    position: absolute;
+    bottom: 16px;
+    right: 23px;
+    text-align: right;
+}
+.payAmount-area .amount-font {
+    font-size: 22px;
+    line-height: 22px;
+    color: #f60;
+    font-weight: bold;
+}
+.zf-twodimensionalcode {
+    width: 950px;
+    margin: auto;
+    height: 510px;
+    background-color: #fff;
+    border-bottom: 3px solid #bbb;
+}
+.saoyisao {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+}
+.saoyisao p {
+    font-size: 12px;
+    color: #4d4d4d;
+} 
+.saoyisao strong {
+    font-size: 26px !important;
+}
+.saoyisao .payAmount-area {
+    display: inline-block;
+    margin-top: 15px;
+}
+.zf-twocodeimg {
+    width: 300px;
+    margin: 25px auto;
+    text-align: center;
+    position: relative;
+}
+.zf-twocodeimg .right-twocodeimg {
+    position: absolute;
+    top: -82px;
+    left: 255px;
+}
+.twocodeimg-bottom {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #a6a6a6;
+    text-decoration: underline
+}
+.icp {
+    font-size: 12px;
+    color: #808080;
+}
+.zf-footer {
+    width: 950px;
+    margin: 30px auto 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.zf-footer .icp {
+    display: block;
+    margin-bottom: 20px;
+}

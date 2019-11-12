@@ -1,0 +1,238 @@
+body {
+    background: #f7f8f8;
+    font-family: Arial,Verdana;
+}
+.wrap,.goods_list {
+    width: 1200px;
+    margin: 0 auto;
+}
+ .page_ad {
+    font-size: 0;
+} 
+.page_ad img:hover {
+    box-shadow: 0 0 10px #888;
+}
+.page_ad a {
+    display: inline-block;
+}
+.page_ad .big {
+    width: 1200px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+.page_ad .medium {
+    width: 405px;
+    height: 180px;
+    margin-right: 10px;
+}
+.page_ad .small {
+    width: 180px;
+    height: 180px;
+    margin-right: 10px;
+}
+.page_ad .small:last-child {
+    margin-right: 0px;
+}
+.select {
+    width: 1200px;
+    line-height: 25px;
+    margin: 20px 0;
+}
+.clearFix {
+    overflow: hidden;
+    background: #eaeaea;
+    border: 1px solid #c7c7c7;
+    border-right: 1px solid #e5e5e5;
+}
+.select .tit {
+    width: 78px;
+    font-size: 12px;
+    float: left;
+    color: #909090;
+    padding: 5px 0px 5px 20px;
+}
+.select ul {
+    float: left;
+    width: 1100px;
+    padding: 4px 0;
+    background: #f1f1f1;
+}
+.select ul li {
+    float: left;
+    position: relative;
+}
+.select ul li a {
+    font-size: 12px;
+    color: #777;
+    padding: 0 16px;
+    text-decoration: none;
+}
+.clearFix ul .line:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 11px;
+    top: 9px;
+    background: #777;
+}
+.select ul li a:hover{
+    color: #008842 !important;
+    text-decoration: underline;
+}
+/* 牛肉列表 */
+.select_list {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    border-bottom-color: #c7c7c7;
+    background: #f1f1f1;
+}
+.staticGreen{
+    color: #008842 !important;
+}
+.beefHidden,.porkHidden {
+    display: none;
+}
+.filter {
+    overflow: hidden;
+    padding: 5px 10px;
+    background: #eaeaea;
+}
+.filter a {
+    height: 18px;
+    color: #444;
+    font-size: 12px;
+    line-height: 18px;
+    margin-left: -1px;
+    padding: 5px 10px;
+    display: block;
+    float: left;
+    text-decoration: none;
+    border: 1px solid #c7c7c7;
+    background: #fff;
+}
+.filter a:hover {
+    color: #008842;
+}
+.filter a:hover .down {
+    background-position: -9px 0;
+}
+.filter a:hover .sort_down {
+    background-position: -29px 0;
+}
+.filter .down1 {
+    background-position: -9px 0;
+}
+.filter #price .down2 {
+    background-position: -29px 0;
+} 
+.filter a i {
+    width: 10px;
+    height: 16px;
+    margin-left: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/www/images/filter_icon.png) no-repeat 1px 0;
+}
+.filter .sort_down {
+    background-position: -19px 0;
+}
+.filter .color {
+    background-color: #eee;
+}
+.goods_list ul {
+    overflow: hidden;
+    margin-left: -13px;
+}
+.product_item {
+    float: left;
+    width: 290px;
+    position: relative;
+    margin: 15px 0 0 13px;
+    background: #fff;
+}
+.product_item .p_img {
+    width: 290px;
+    height: 290px;
+    position: relative;
+}
+.product_item .p_img .tag {
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.product_item .p_info {
+    padding: 10px;
+    height: 48px;
+}
+.p_info .p_name {
+    height: 16px;
+    margin-bottom: 10px;
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.p_name a {
+    color: #444;
+    font-size: 12px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p_info .p_price {
+    height: 22px;
+}
+.p_price .price {
+    font-size: 18px;
+    color: #e7380d;
+}
+.price strong {
+    font-weight: bold;
+}
+.p_name a:hover {
+    text-decoration: underline;
+    color: #008842;
+}
+.product_item .p-buy {
+    display: none;
+    width: 270px;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 68px;
+    background: rgba(255, 255, 255, 0.9);
+}
+.product_item .p-buy span {
+    width: 270px;
+    color: #444;
+    font-size: 12px;
+    display: block;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+.p-buy .btn-buy {
+    width: 180px;
+    height: 25px;
+    font-size: 12px;
+    margin: 0 auto;
+    line-height: 26px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: #008842;
+}
+.product_item:hover .p-buy {
+    display: block;
+}
+.p-buy .btn-buy:hover {
+    background: #278a56;
+}
+/* 切换类 */
+.clickChange {
+    display: none;
+}

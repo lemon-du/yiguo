@@ -1,12 +1,15 @@
-﻿body {
-    background: #f7f8f8;
-    font-family: Arial,Verdana,"\5b8b\4f53";
-    color: #444;
-}
-.wrap {
+﻿
+.detail_wrap {
     width: 1200px;
     margin: 0 auto;
     font-size: 12px;
+}
+.clearfix:after, .detail_wrap:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }
 /* 清除浮动 */
 .clearfix {
@@ -16,11 +19,13 @@
     margin: 10px 0;
     font-size: 12px;
     width: 100%;
+    color: #444;
 }
-.crumbs>a {
+.detail_wrap .crumbs>a {
     margin-right: 10px;
+    color: #444;
 }
-.crumbs>a:hover {
+.detail_wrap .crumbs>a:hover {
     color: #008842;
 }
 .content_goods {
@@ -80,15 +85,16 @@
     height: 70px;
     width: 423px;
 }
-.tt {
+.detail_wrap .rmb {
     display: inline-block;
     width: 60px;
     font-size: 12px;
 }
-.pro-price em {
+.detail_wrap .pro-price em {
     font-size: 18px;
     margin-right: -3px;
     color: #ff0000;
+    padding: 0 5px;
 }
 .pro-price strong {
     color: #ff0000;
@@ -152,7 +158,7 @@
 }
 /* 中间内容右下部分 */
 .summary-other {
-    float: right;
+    float: left;
     margin-top: 20px;
 }
 .summary-other .left {
@@ -204,7 +210,7 @@
     width: 40px;
     padding: 0 10px;
 }
-.choose,.pro-service {
+.detail_wrap .choose,.detail_wrap .pro-service,.detail_wrap .pro-amount {
     margin-bottom: 20px;
 }
 .pro-service {
@@ -294,8 +300,9 @@
 .summary-other .right {
     float: right;
     width: 120px;
+    line-height: 15px;
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 28px;
     color: #777;
 }
 .summary-other .right th {
@@ -309,13 +316,13 @@
     padding-left: 5px;
 }
 /* 猜你喜欢 */
-.left-con {
+.detail_wrap .left-con {
     float: left;
     overflow: hidden;
     width: 255px;
     margin-right: 15px;
 }
-.left-con .box {
+.detail_wrap .left-con .box {
     font-size: 12px;
     position: relative;
     margin-bottom: 20px;
@@ -338,7 +345,7 @@
 .RecentView .bd .p .del:hover {
     background-position: -82px 0;
 }
-.left-con .hd {
+.detail_wrap .left-con .hd {
     height: 30px;
     padding: 0 10px;
     line-height: 30px;
@@ -347,49 +354,49 @@
     color: #fff;
     background: #008842;
 }
-.left-con .hd a {
+.detail_wrap .left-con .hd a {
     float: right;
     color: #fff;
     font-weight: normal;
 }
-.left-con .p {
+.detail_wrap .left-con .p {
     height: 70px;
     padding: 10px 10px;
     position: relative;
     border-bottom: 1px dashed #cdcdcd;
 }
-.left-con .p .img img {
+.detail_wrap .left-con .p .img img {
     width: 68px;
     height: 68px;
 }
-.left-con .p .img  {
+.detail_wrap .left-con .p .img  {
     float: left;
     width: 68px;
     height: 68px;
     border: 1px solid #dfdfdf;
 }
-.left-con .p .txt {
+.detail_wrap .left-con .p .txt {
     float: left;
     width: 153px;
     margin-left: 10px;
     padding: 4px 0;
     line-height: 20px;
 }
-.left-con .p .txt a:hover strong,.left-con .p .txt a:hover {
+.detail_wrap .left-con .p .txt a:hover strong,.detail_wrap .left-con .p .txt a:hover {
     color: #008842;
 }
-.left-con .p .txt strong,.RecentView .p .txt a {
+.detail_wrap .left-con .p .txt strong,.RecentView .p .txt a {
     display: block;
     height: 40px;
     margin-bottom: 5px;
     color: #777;
     font-weight: normal;
 }
-.left-con .p .txt span {
+.detail_wrap .left-con .p .txt span {
     font-size: 12px;
     color: #e8380d;
 }
-.left-con .p .add {
+.detail_wrap .left-con .p .add {
     z-index: 1;
     display: none;
     position: absolute;
@@ -402,7 +409,7 @@
     border-radius: 3px;
     cursor: pointer;
 }
-.fruit-main-con {
+.detail_wrap .fruit-main-con {
     float: right;
 }
 /* 当季热卖 */
@@ -459,7 +466,6 @@
     position: relative;
     border: 1px solid #d4d4d4;
     background: #fff;
-    overflow: hidden;
 }
 .detail-tab .detail-ul {
     margin-top: -1px;
@@ -475,7 +481,7 @@
 .product-detail .detail-tab .detail-ul>li:hover a{
     color: #008842;
 }
-.detail-tab .detail-ul li .active {
+.detail-tab .detail-ul li .pro-active {
     position: relative;
     border-bottom: 2px solid #fff;
     background: #fff url("http://static01.yiguo.com/www/images/product.png") no-repeat -33px -58px;
@@ -486,6 +492,7 @@
     padding-top: 4px;
     line-height: 36px;
     font-size: 12px;
+    color: #666;
 }
 .detail-tab .detail-ul>li>a>b {
     font-weight: normal;
@@ -736,7 +743,6 @@ select {
 .comment-item {
     padding: 15px 0 15px 0;
     font-size: 12px;
-    /* overflow: hidden; */
 }
 .comment-item:after {
     content: ".";
@@ -883,45 +889,43 @@ select {
     padding: 20px;
 }
 /* 第二个详情页面 */
-body {
-    background: #f7f8f8;
-}
-.crumbs {
+.recipe .crumbs {
     margin: 10px 0;
     margin-left: -10px;
 }
-.crumbs a {
+.recipe .crumbs a {
     margin: 0 10px;
+    color: #444;
 }
-.crumbs a:hover {
+.recipe .crumbs a:hover {
    color: #008842;
 }
-.recipe-intro {
+.recipe .recipe-intro {
     padding-bottom: 25px;
     border-bottom: 1px solid #d9d9d9;
 }
-.recipe-intro .pic {
+.recipe .recipe-intro .pic {
     position: relative;
     float: left;
     width: 500px;
     height: 500px;
     border: 1px solid #d9d9d9;
 }
-.recipe-intro .pic img {
+.recipe .recipe-intro .pic img {
     width: 500px;
     height: 500px;
 }
-.recipe-info {
+.recipe .recipe-info {
     width: 670px;
     margin-left: 527px;
 }
-.recipe-info h1 {
+.recipe .recipe-info h1 {
     font: normal 40px "Microsoft YaHei";
 }
-.recipe-info .tag {
+.recipe .recipe-info .tag {
     margin-top: 20px;
 }
-.recipe-info .tag span {
+.recipe .recipe-info .tag span {
     display: inline-block;
     padding: 7px 17px;
     color: #85b100;
@@ -929,64 +933,65 @@ body {
     border: 1px solid #cfcfcf;
     background: #fff;
 }
-.introduce {
+.recipe .introduce {
     margin-top: 20px;
     color: #888;
     font-size: 14px;
     line-height: 25px;
 }
-.recipe-main .main {
+.recipe .recipe-main .main {
     float: left;
     width: 940px;
 }
-.recipe-main h4 {
+.recipe .recipe-main h4 {
     margin: 20px 0;
     font: bold 20px "Microsoft YaHei";
     color: #666;
 }
-.food-heading {
+.recipe .food-heading {
     font: bold 16px/26px microsoft yahei;
     color: #3E3A39;
     border-bottom: 1px dashed #ddd;
     margin-bottom: 5px;
 }
-.food-heading>em {
+.recipe .food-heading>em {
     float: left;
     width: 8px;
     height: 26px;
     margin-right: 10px;
-    /* display: inline-block; */
-    /* overflow: hidden; */
     background: #85b100;
 }
-.menu-food .info {
+.recipe .menu-food .info {
     line-height: 28px;
     color: #888;
     overflow: hidden;
 }
-.menu-food {
+.recipe .menu-food {
     background: #fff;
     padding: 10px 15px;
     overflow: hidden;
     position: relative;
 }
-.menu-food .img {
+.recipe .menu-food .img {
     float: left;
     margin-right: 25px;
+    width: 500px;
+    height: 348px;
 }
-.menu-food .info h3 {
+.recipe .menu-food .info h3 {
     font-size: 14px;
     color: #3E3A39;
 }
-.recipe-guide {
+.recipe .recipe-guide {
     width: 240px;
     margin-top: 70px;
     border: 1px solid #d9d9d9;
     border-bottom: 0;
     background: #fff;
-    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
 }
-.recipe-guide a {
+.recipe .recipe-guide a {
     display: block;
     height: 24px;
     padding: 15px 20px;
@@ -994,15 +999,15 @@ body {
     color: #85b100;
     font: normal 16px/24px "Microsoft YaHei";
 }
-.current {
+.recipe .current {
     background: url("http://static01.yiguo.com/article/images/recipe/recipe_guide.png") no-repeat 0 -94px;
 }
-.side-guide {
+.recipe .side-guide {
     position: relative;
     float: right;
     width: 240px;
 }
-.recipe-guide i {
+.recipe .recipe-guide i {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -1010,71 +1015,83 @@ body {
     vertical-align: middle;
     background: url("http://static01.yiguo.com/article/images/recipe/recipe_guide.png") no-repeat;
 }
-.recipe-guide .icon01 {
+.recipe .recipe-guide .icon01 {
     background-position: 0 0;
 }
-.recipe-guide a:hover .icon01, .recipe-guide .current .icon01 {
+.recipe .recipe-guide a:hover .icon01, .recipe-guide .current .icon01 {
     background-position: -26px 0;
 }
-.recipe-guide .icon02 {
+.recipe .recipe-guide .icon02 {
     background-position: -2px -24px;
 }
-.recipe-guide a:hover .icon02, .recipe-guide .current .icon02 {
+.recipe .recipe-guide a:hover .icon02, .recipe .recipe-guide .current .icon02 {
     background-position: -26px -24px;
 }
-.recipe-guide .icon03 {
+.recipe .recipe-guide .icon03 {
     background-position: 0 -48px;
 }
-.recipe-guide a:hover .icon03, .recipe-guide .current .icon03 {
+.recipe .recipe-guide a:hover .icon03, .recipe .recipe-guide .current .icon03 {
     background-position: -26px -48px;
 }
-.recipe-guide .icon04 {
+.recipe .recipe-guide .icon04 {
     background-position: 0 -72px;
 }
-.recipe-guide a:hover .icon04, .recipe-guide .current .icon04 {
+.recipe .recipe-guide a:hover .icon04, .recipe-guide .current .icon04 {
     background-position: -26px -72px;
 }
-.recipe-guide a:hover, .recipe-guide .current {
+.recipe .recipe-guide a:hover,.recipe .recipe-guide .current {
     background: url("http://static01.yiguo.com/article/images/recipe/recipe_guide.png") no-repeat 0 -94px;
 }
-.recipe-guide a:hover i {
+.recipe-guide a:hover i, .recipe-guide .current i {
+    margin-right: 45px;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
     transition: all .3s ease-in;
-} 
-.recipe-guide .current span {
-    margin-left: 15px;
 }
-.recipe-guide a:hover span{
+.recipe .recipe-guide a:hover span{
+    -webkit-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
     transition: all .3s ease-in;
 }
 /* 第三个页面样式 */
-.content {
+.detail_wrap .content {
     margin: 30px 0 50px 0;
 }
 /* 中间 */
-.main-con {
+.detail_wrap .main-con {
     float: left;
     width: 910px;
     padding-right: 30px;
     border-right: 1px solid #aaa;
 }
-.news-box {
+.detail_wrap .news-box {
     position: relative;
     width: 910px;
     height: 290px;
     margin-bottom: 50px;
 }
-.news-box .img {
+.detail_wrap .news-box .img {
     float: left;
     margin-right: 25px;
-}
-.news-box .img img{
     width: 290px;
     height: 290px;
 }
-.news-box .name {
+.detail_wrap .content .news-box .name a {
+    color: #444;
+}
+.detail_wrap .content .news-box .name a:hover {
+    color: #85b100;
+}
+.detail_wrap .content .news-box .img img{
+    width: 290px;
+    height: 290px;
+}
+.detail_wrap .content .news-box .name {
     font: bold 20px "Microsoft YaHei";
 }
-.news-box .intro {
+.detail_wrap .content .news-box .intro {
     overflow: hidden;
     width: 595px;
     height: 200px;
@@ -1082,66 +1099,73 @@ body {
     line-height: 25px;
     color: #777;
 }
-.news-box .like {
+.detail_wrap .news-box .like {
     float: left;
     margin-right: 25px;
 }
-.news-box .like {
+.detail_wrap .news-box .like {
     position: absolute;
     bottom: 10px;
     right: 10px;
     color: #85b100;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
 }
-.news-box .like i {
+.detail_wrap .news-box .like .VoteCount {
+    color: #85b100;
+}
+.detail_wrap .news-box .like i {
     display: inline-block;
     width: 18px;
     height: 16px;
     margin-right: 5px;
-    vertical-align: top;
+    vertical-align: middle;
     background: url("http://static01.yiguo.com/article/images/recipe/recipe_guide.png") no-repeat -3px -75px;
 }
 /* 右边 */
-.right-con {
+.detail_wrap  .right-con {
     float: right;
     width: 240px;
     margin-left: 19px;
 }
-.right-con .list {
+.detail_wrap .right-con .list {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #d9d9d9;
 }
-.right-con .hd {
+.detail_wrap .right-con .hd {
     padding: 10px 0;
     font-size: 14px;
     font-weight: bold;
 }
-.right-con .list a {
+.detail_wrap .right-con .list a {
     display: block;
     height: 25px;
     padding-left: 10px;
     line-height: 25px;
 }
-.right-con .list a:hover {
+.detail_wrap .right-con .list a:hover {
     color: #fff;
     background: #85b100;
 }
-.selectCategory {
+.detail_wrap .bd a {
+    color: #444;
+}
+.detail_wrap .bd .selectCategory {
     color: #fff;
     background: #85b100;
 }
-.right-con .hd {
+.detail_wrap .right-con .hd {
     padding: 10px 0;
     font-size: 14px;
     font-weight: bold;
 }
-.right-con .hot .box {
+.detail_wrap .right-con .hot .box {
     margin-bottom: 20px;
 }
-.right-con .hot a img {
+.detail_wrap .right-con .hot a img {
     display: block;
     width: 240px;
     height: 240px;
@@ -1152,6 +1176,7 @@ body {
 .news-detail h1 {
     margin-bottom: 15px;
     font: bold 20px "Microsoft YaHei";
+    color: #444;
 }
 .news-detail li {
     text-align: center;

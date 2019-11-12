@@ -1,0 +1,184 @@
+.shopping-cart {
+    float: right;
+    z-index: 88;
+    position: relative;
+    font-size: 12px;
+    font-family: Arial, Verdana, "\5b8b\4f53";
+    color: #444;
+}
+.shopping-btn {
+    width: 170px;
+    height: 28px;
+    padding: 6px 0;
+    line-height: 28px;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid #008842;
+    background: #fff;
+    cursor: pointer;
+}
+a {
+    color: #008842;
+}
+.totleNum {
+    display: inline-block;
+    vertical-align: middle;
+    width: 28px;
+    height: 20px;
+    margin-right: 4px;
+    font-size: 12px;
+    padding: 0;
+    background: url(http://static01.yiguo.com/www/images/header/header-img.png) no-repeat -112px 0;
+}
+.totleNum b {
+    display: block;
+    width: 24px;
+    line-height: 12px;
+    margin-right: 4px;
+    text-align: center;
+}
+.product_item {
+    float: left;
+    position: relative;
+    width: 290px;
+    margin: 15px 0 0 13px;
+    background: #fff;
+}
+.product_item .p_img {
+    position: relative;
+    width: 290px;
+    height: 290px;
+}
+a {
+    color: #444;
+}
+.shopping-btn a {
+    display: block;
+    color: #008842;
+}
+.shopping-list {
+    z-index: 88;
+    display: none;
+    position: absolute;
+    top: 41px;
+    right: 0;
+    width: 380px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #007f4d;
+}
+.shopping-list .nogoods {
+    width: 380px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    background: url(../images/none-bg-w190.jpg) no-repeat center #fff;
+}
+.shopping-list ul {
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 380px;
+    max-height: 264px;
+    margin: 10px 0 0 0;
+    padding: 0px;
+}
+.shopping-list .price-total {
+    display: none;
+    font-size: 12px;
+    line-height: 27px;
+    margin-top: 5px;
+    padding-top: 10px;
+    text-align: right;
+    border-top: 1px solid #dcdcdc;
+}
+.shopping-list .price-total span {
+    margin-left: 15px;
+}
+.shopping-list .price-total b {
+    color: #e7380d;
+    font-size: 16px;
+    margin: 0 5px;
+}
+.shopping-list .settleup {
+    display: inline-block;
+    width: 75px;
+    height: 27px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background: #008842;
+}
+.shopping-list li {
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+    background: #fff;
+    height: 45px;
+    padding: 0 0 15px 0;
+    line-height: 20px;
+}
+.shopping-list li .l {
+    float: left;
+    margin-right: 5px;
+    width: 45px;
+    height: 45px;
+}
+.shopping-list li .c {
+    float: left;
+    width: 222px;
+}
+.shopping-list li .c a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.shopping-list li .r {
+    float: left;
+    text-align: right;
+    width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.shopping-list li .r b {
+    color: #e7380d;
+    font-weight: bold;
+}
+.shopping-list li .r a {
+    display: block;
+    color: #888;
+}
+.totlePrice {
+    font-size: 20px;
+}
+.shopping-btn1 {
+    width: 142px;
+    height: 34px;
+    padding: 6px 0;
+    line-height: 28px;
+    text-align: center;
+    font-size: 25px;
+    border: 1px solid #008842;
+    background: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.shopping-btn2 {
+    position: absolute;
+    top: 2px;
+    left: 37px;
+}
+.shopping-list1 {
+    z-index: 88;
+    display: none;
+    position: absolute;
+    top: 33px;
+    right: 0;
+    width: 380px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #007f4d;
+}

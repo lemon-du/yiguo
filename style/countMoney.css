@@ -1,0 +1,772 @@
+.countMoney {
+    font-size: 12px;
+    position: relative;
+}
+.count-head {
+    background: #e0e0e0;
+}
+.countMoney .count-wrap {
+    width: 1200px;
+    height: 58px;
+    padding: 15px 0 5px 0;
+    margin: 0 auto;
+}
+.clearfix {
+    overflow: hidden;
+}
+.countMoney .count-head .yiguologo {
+    float: left;
+}
+.countMoney .yiguologo {
+    display: block;
+    width: 145px;
+    height: 50px;
+    background: url(http://static01.yiguo.com/cart/images/header/logo.png) no-repeat left top;
+}
+.countMoney .count-head .yiguosteps {
+    float: right;
+    padding-top: 20px;
+    margin-right: 40px;
+}
+.countMoney .count-head .yiguosteps li {
+    position: relative;
+    float: left;
+}
+.countMoney .count-head .yiguosteps li b {
+    background: url(http://static01.yiguo.com/cart/images/order-step.png) no-repeat;
+    width: 36px;
+    height: 36px;
+    display: block;
+    float: left;
+}
+.countMoney .count-head .yiguosteps li i {
+    width: 165px;
+    height: 6px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    display: block;
+    float: left;
+    margin-top: 15px;
+    margin-right: 0;
+    overflow: hidden;
+}
+.countMoney .count-head .yiguosteps .on i {
+    border-color: #008842;
+    background: #008842;
+}
+.countMoney .count-head .yiguosteps li .b1 {
+    background-position: 0 0;
+}
+.countMoney .count-head .yiguosteps .on .b1 {
+    background-position: 0 -44px;
+}
+.countMoney .count-head .yiguosteps li .b2 {
+    background-position: -42px 0;
+}
+.countMoney .count-head .yiguosteps .on .b2 {
+    background-position: -42px -44px;
+}
+.countMoney .count-head .yiguosteps li .b3 {
+    background-position: -84px 0;
+}
+.countMoney .count-head .yiguosteps li span {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    right: -62px;
+    color: #333;
+}
+.countMoney .count-head .yiguosteps .on span {
+    color: #008842;
+}
+/* 提交订单信息 */
+.countMoney .count-order {
+    margin-top: 20px;
+}
+.countMoney .count-order h2 {
+    height: 38px;
+    line-height: 38px;
+    background-color: #fff;
+    background-position: 0 -120px;
+    border-bottom: 2px solid #7bb798;
+    text-indent: -9999em;
+    position: relative;
+}
+.count-orderr h2, .count-order i, .modal-header h3 i, .count-order b, .modal b, .o-voucher i {
+    background-image: url(http://static01.yiguo.com/cart/images/bg_order.png);
+    background-repeat: no-repeat;
+}
+.countMoney .complete .o-i-delivery {
+    background-position: -37px -40px;
+}
+.countMoney .order-alert {
+    padding-left: 36px;
+    border: 1px solid #e3e6e0;
+    border-top: 0;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+.countMoney .order-mode {
+    border-left: 1px solid #b0d0c0;
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    padding-bottom: 40px;
+}
+.countMoney .complete {
+    border-left: 1px solid #7bb798;
+}
+.countMoney .count-order h3 {
+    font: bold 16px/1 "microsoft yahei";
+    color: #008842;
+}
+.countMoney .order-mode h3,.countMoney .order-mode-last h3 {
+    position: absolute;
+    left: -16px;
+    top: -16px;
+}
+.countMoney .order-mode h3 {
+    width: 100%;
+}
+.countMoney .order-mode>div {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #d5dfd0;
+}
+.countMoney .order-mode h3 i, .order-mode-last h3 i {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.countMoney .o-i-receive {
+    background-position: 3px -40px;
+}
+.countMoney .count-order .link {
+    display: block;
+    color: #008842;
+    font-weight: bold;
+    line-height: 2em;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.count-order .link i {
+    display: inline-block;
+    width: 8px;
+    height: 10px;
+    background-position: -100px -180px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.countMoney .pickup {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 1px solid #e8e8e8;
+}
+.countMoney .pickup h4 {
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.countMoney .consignee-info, .pickup-agree {
+    margin: 10px 0 10px 6px;
+}
+.o-receive label.selected b, .o-invoice-item label.selected b {
+    display: block;
+}
+.o-receive .adrtag {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    padding: 2px 5px;
+    color: #008842;
+    border: 1px solid #7bb798;
+    background: #fbfffd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.countMoney .o-receive .btn-setdefault, .o-receive .btn-edit, .o-receive .btn-del, .o-invoice-item .btn-edit, .o-invoice-item .btn-del {
+    margin-left: 12px;
+    display: none;
+    color: #008842;
+}
+.o-receive .selected:hover .btn-setdefault {
+    display: inline;
+}
+.o-receive .selected:hover .btn-edit {
+    display: inline;
+}
+.o-receive .selected:hover .btn-del {
+    display: inline;
+}
+.o-receive .selected .adrtag {
+    color: #fff;
+    background: #8cc4a7;
+}
+.countMoney .consignee-info .input {
+    width: 170px;
+    height: 16px;
+    padding: 3px 10px;
+    border: 1px solid #ddd;
+}
+.countMoney .pickup-agree input {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.countMoney .o-i-payment {
+    background-position: -77px -40px;
+}
+/* 发票信息 */
+.countMoney .o-i-invoice {
+    background-position: -117px -40px;
+}
+.countMoney .o-receive label input,.countMoney .o-invoice label input {
+    margin-right: 5px;
+    vertical-align: top;
+}
+.countMoney .o-invoice > label .promptbox {
+    margin-left: 10px;
+}
+.countMoney .o-invoice > label .promptbox span {
+    color: #7bb798;
+}
+.o-receive .selected .adrtag {
+    color: #fff;
+    background: #8cc4a7;
+}
+.countMoney .o-receive strong {
+    margin: 0 10px;
+    color: #262626;
+}
+.countMoney  .dorpdown {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    line-height: 20px;
+    color: #666;
+    background: #fdfffe;
+    border: 1px solid #c6ddd1;
+}
+.countMoney .o-invoice > label .promptbox .dorpdown {
+    top: 24px;
+    left: -36px;
+    width: 400px;
+    padding: 15px;
+}
+.countMoney .promptbox .dorpdown i {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background-position: -260px -160px;
+}
+.countMoney .promptbox .dorpdown .up {
+    background-position: -272px -160px;
+}
+.countMoney .o-invoice > label .promptbox .dorpdown i {
+    top: -8px;
+    left: 54px;
+}
+.countMoney .center {
+    text-align: center;
+}
+.countMoney .mt10 {
+    margin-top: 10px;
+}
+.countMoney .o-invoice-item {
+    display: none;
+    margin: 10px 0 0 10px;
+}
+.countMoney .o-invoice-item .tab {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+.countMoney .o-receive label,.countMoney .o-invoice-item label {
+    display: inline-block;
+    padding: 5px 20px 5px 5px;
+    position: relative;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.countMoney .o-receive .selected,.countMoney .o-invoice-item .selected {
+    background-color: #f2fcf7;
+    border-color: #7bb798;
+    padding: 5px 19px 5px 5px;
+}
+.countMoney .o-invoice-item .tab label {
+    margin-left: 10px;
+    padding: 5px;
+}
+.countMoney .promptbox {
+    position: relative;
+    display: inline-block;
+}
+.countMoney .o-invoice-item .promptbox {
+    margin-left: 10px;
+}
+.countMoney .o-invoice-item .promptbox span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    background: url(http://static01.yiguo.com/cart/images/bg_order.png) no-repeat -240px -160px;
+}
+#shuom {
+    display: none;
+}
+#theDeliveryDate {
+    display: inline-block;
+    background: #f2fcf7;
+    border: 1px solid #7bb798;
+    padding: 6px 50px;
+    position: relative;
+    color: #008842;
+} 
+.count-order b, .modal b {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 12px;
+    overflow: hidden;
+    background-position: -80px -180px;
+}
+.countMoney .o-invoice-item .promptbox .dorpdown {
+    bottom: 24px;
+    left: -36px;
+    width: 600px;
+    padding: 10px;
+}
+.countMoney .promptbox .dorpdown i {
+    position: absolute;
+    width: 12px;
+    height: 8px;
+    background-position: -260px -160px;
+}
+.countMoney .o-invoice-item .promptbox .dorpdown i {
+    bottom: -8px;
+    left: 38px;
+}
+.countMoney .mt15 {
+    margin-top: 15px;
+}
+.countMoney .green {
+    color: #008842;
+}
+.countMoney .o-invoice-info {
+    display: none;
+    margin-left: 30px;
+    line-height: 20px;
+}
+.countMoney .o-invoice-item .tip {
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 20px;
+    border-top: 1px solid #eaeaea;
+}
+.countMoney .promptbox:hover .dorpdown {
+    display: block;
+}
+/* 商品信息 */
+.countMoney .o-i-commodity {
+    background-position: -157px -40px;
+}
+.countMoney .order-mode .backcart {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #008842;
+    font: normal 12px "\5b8b\4f53";
+}
+.countMoney .count-order .table {
+    border-collapse: collapse;
+    border: 1px solid #e8e8e8;
+    width: 100%;
+    background-color: #fff;
+}
+.countMoney .count-order .table th,.countMoney .count-order .table td {
+    border-top: 1px solid #e8e8e8;
+    padding: 10px;
+    text-align: center;
+}
+.countMoney .count-order .table th {
+    color: #666;
+    background-color: #f9f9f9;
+}
+.count-order .table th, .count-order .table td {
+    border-top: 1px solid #e8e8e8;
+    padding: 10px;
+    text-align: center;
+}
+.countMoney .count-order .table td {
+    color: #333;
+}
+.countMoney .o-commodity .table td:first-child {
+    padding-left: 60px;
+    line-height: 20px;
+    text-align: left;
+}
+.countMoney .f1 {
+    float: left;
+}
+ #txtWebRemark {
+    width: 530px;
+    height: 16px;
+    padding: 5px 10px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+.countMoney .o-voucher .item-tit i, .o-voucher .sub-tit i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 6px;
+    background-position: -60px -180px;
+}
+.countMoney .o-i-voucher {
+    background-position: -197px -40px;
+}
+.countMoney .o-i-order {
+    background-position: -236px -40px;
+}
+.countMoney .o-voucher .item-tit, .o-voucher .sub-tit {
+    line-height: 38px;
+}
+.countMoney .order-mode-last {
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    padding-bottom: 40px;
+}
+.countMoney .o-order div {
+    margin-bottom: 10px;
+}
+.countMoney .o-order div .input {
+    width: 170px;
+    height: 16px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+}
+.countMoney .cart-footer {
+    background-color: #f7f7f7;
+    font: 12px/1em microsoft yahei;
+    color: #666;
+    margin-top: 20px;
+    padding: 10px;
+}
+.countMoney .settle-fixed {
+    z-index: 100;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+.countMoney.cart-footer .wrap {
+    width: 100%;
+}
+.countMoney .settle-fixed .wrap {
+    width: 1200px;
+}
+.countMoney .right {
+    text-align: right;
+}
+.cart-footer .none {
+    display: none;
+}
+.countMoney .settle-fixed .none {
+    display: inline-block;
+}
+.countMoney .cart-footer span {
+    margin-right: 20px;
+}
+.countMoney .fs14 {
+    font-size: 14px;
+}
+.countMoney .cart-footer a {
+    font: 12px/40px microsoft yahei;
+    margin-left: 20px;
+}
+.countMoney .cart-footer .btn {
+    font: bold 18px/1em microsoft yahei;
+    background-color: #e8380d;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-left: 0;
+}
+.countMoney .cart-footer em {
+    color: #e8380d;
+    font-weight: bold;
+    font: bold 18px/1em microsoft yahei,Verdana;
+}
+.countMoney .statistic {
+    line-height: 2em;
+    font-size: 14px;
+}
+/* 新增地址 */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #b0b0b0;
+}
+.modal-backdrop.fade {
+    opacity: 0.5;
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0.35;
+}
+.modal.fade.in {
+    top: 50%;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1050;
+    overflow: auto;
+    width: 660px;
+    padding: 0 15px;
+    margin: -200px 0 0 -285px;
+    background-color: #f8fffc;
+    border: 1px solid #008842;
+}
+.modal-header {
+    border-bottom: 1px solid #7bb798;
+    position: relative;
+}
+.modal-header .close {
+    cursor: pointer;
+    font-size: 20px;
+    color: #b5c399;
+    font-family: sans-serif;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+.modal-header h3 {
+    color: #008842;
+    height: 38px;
+    font: 14px/38px microsoft yahei;
+}
+.modal-header h3 i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.modal-header h3 .i-newaddr {
+    background-position: -220px -160px;
+}
+.modal-body {
+    overflow-y: auto;
+    max-height: 400px;
+    padding: 15px 30px 23px 28px;
+    min-height: 150px;
+    color: #333;
+}
+.modal .control-group {
+    margin-bottom: 20px;
+}
+.modal .control-label {
+    float: left;
+    display: block;
+    width: 85px;
+    text-align: right;
+    line-height: 26px;
+}
+.modal .controls {
+    margin-left: 85px;
+}
+.modal .controls input {
+    vertical-align: middle;
+    padding: 5px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.modal .controls .input-l {
+    width: 240px;
+}
+.modal .controls .adrtag {
+    display: inline-block;
+    padding: 5px 15px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.modal .controls .adrtag.selected {
+    position: relative;
+    background-color: #f2fcf7;
+    border-color: #7bb798;
+}
+.modal b {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 12px;
+    overflow: hidden;
+    background-position: -80px -180px;
+}
+.modal .controls .btn-save {
+    background-color: #008842;
+    border: 1px solid #008842;
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 3px;
+}
+.modal .controls select {
+    width: 110px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.countMoney .error {
+    color: red;
+}
+/* 提示信息 */
+.layer_global_main {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px;
+    z-index: 1102;
+    width: 500px;
+    height: 210px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -105px;
+    background: #fff;
+}
+.layer_global_title {
+    background: #f6f6f6;
+    padding: 8px 20px 10px 12px;
+    text-align: center;
+    clear: both;
+    cursor: move;
+    background-color: #008842;
+}
+.layer_global_title h3 {
+    display: inline-block;
+    text-indent: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+.layer_global_title button {
+    background: url(http://static01.yiguo.com/common/popup/popup_img/bg_goods.png) -103px -13px;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    text-indent: -9999px;
+    width: 9px;
+    height: 9px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+.layer_cont_15 {
+    padding: 15px;
+}
+.layer_global .layer_cont_15 {
+    padding: 25px 15px;
+}
+.layer_global_mod {
+    padding: 0px 0px 0px 120px;
+    line-height: 22px;
+    font-size: 12px;
+    position: relative;
+    zoom: 1;
+}
+.layer_global_mod {
+    padding: 0;
+    text-align: center;
+}
+.layer_global_mod .icon_msg4 {
+    position: relative;
+    left: 0;
+}
+
+.layer_global .layer_global_mod .icon_msg4 {
+    position: absolute;
+    left: 52px;
+}
+.icon {
+    margin-right: 10px;
+}
+.icon_msg4 {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(http://static01.yiguo.com/common/popup/popup_img/icon32x32.png) no-repeat;
+}
+.icon_msg4_warn {
+    background-position: -80px 0;
+}
+.layer_global .layer_global_mod .icon_msg4 {
+    position: absolute;
+    left: 52px;
+}
+.layer_global .layer_global_mod .icon_msg4 {
+    position: relative;
+    left: 0;
+}
+.layer_global_mod .layer_global_tit {
+    font-size: 14px;
+    font-weight: normal;
+}
+ .layer_global_mod .layer_global_tit {
+    padding: 10px 30px 0 30px;
+}
+.layer_global_mod .wrap_btn {
+    padding: 30px 0 0;
+}
+.layer_global_mod .wrap_btn .btn_strong{
+    display: inline-block;
+    padding: 0px 25px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 10px;
+    font-weight: normal;
+    border: 1px solid #008842;
+    color: #fff;
+    border-radius: 3px;
+}
+.countMoney .msg-shadow {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.2);
+    z-index: 2;
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+

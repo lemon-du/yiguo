@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/head.css">
+    <link rel="stylesheet" href="style/countMoney.css">
+
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <link rel="stylesheet" href="style/animate.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header-top">
+        <!-- 头部内框 -->
+        <div class="header-box">
+            <ul class="fl">
+                <li class="Welcome">欢迎光临易果生鲜！</li>
+                <li class="Tips">
+                    <img class="img" src="img/notice.png" style="vertical-align:middle;width:16px;height:16px;">
+                    <a href="#" class="hover blank">网警提示</a>
+                </li>
+            </ul>
+            <ul class="fr">
+                <li class="apt">
+                    <img src="img/recruit.png" style="vertical-align:middle;">
+                    <a href="#" class="apt-a hover">人才招聘</a>
+                </li>
+                <li class="apt">
+                    <img src="img/aptitudeicon.png" style="vertical-align:middle;">
+                    <a href="#" class="apt-a hover">营业资质</a>
+                </li>
+                <li class="TEL"><a href="#" class="TEL-A hover"><i class="i-a"></i>礼品兑换券入口</a></li>
+                <li class="pay"><a href="#" class="pay-a hover"><i class="i-d i-a"></i>礼品卡绑定</a></li>
+                <li class="mobile">
+                    <a href="javascript:void(0)" class="mobile-a hover"><i class="i-b i-a"></i>手机易果<b class="b"></b></a>
+                    <div class="con1">
+                        <img src="img/qrcode_app.png" alt="" id="QR-code-photo">
+                        <p class="font-title">扫一扫下载APP</p>
+                        <img src="img/qrcode_wechat.png" alt="" id="QR-code-photo">
+                        <p class="font-title">易果生鲜微信</p>
+                    </div>
+                </li>
+                <li class="myyiguo">
+                    <a href="#" class="myyiguo-a hover" data-list="0"><i class="i-c i-a"></i>我的易果<b class="b"></b></a>
+                    <div id="phone-QR-code">
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="1">我的订单</a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="2">我的优惠券<sapn id="coupon">
+                                3</span></a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="6">我的收藏</a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="3">我的悠币</a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="13">我的退换货</a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="8">预存款查询</a>
+                        <a href="javascript:void(0)" class="nofollow hover" data-list="7">评论商品</a>
+                    </div>
+                </li>
+                <li class="con-item tit-hidden loginout"><a id="out" class="hover" href="javascript:;">[退出]</a></li>
+                <li class="con-item tit-hidden loginout"><a id="tel" class="hover" href="javascript:void(0)"></a>
+                </li>
+                <li class="con-item login-reg"><a class="hover" href="register.html">[注册]</a></li>
+                <li class="con-item login-reg"><a class="hover" href="login.html">[登录]</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="countMoney">
+        <div class="count-head">
+            <div class="count-wrap">
+                <div class="yiguologo">
+                    <a href="javascript:boid(0)" target="_blank"></a>
+                </div>
+                <div class="yiguosteps">
+                    <ul>
+                        <li class="on">
+                            <b class="b1"></b>
+                            <span>我的购物车</span>
+                        </li>
+                        <li class="on">
+                            <i></i>
+                            <b class="b2"></b>
+                            <span>确认订单信息</span>
+                        </li>
+                        <li>
+                            <i></i>
+                            <b class="b3"></b>
+                            <span>成功提交订单</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="count-order">
+            <div class="wrap">
+                <h2>填写核对订单信息</h2>
+                <div class="order-alert">
+                    <!-- 收货信息 -->
+                    <div class="order-mode complete" id="order1">
+                        <h3>
+                            <i class="o-i-receive"></i>
+                            收货信息
+                        </h3>
+                        <div class="o-receive">
+                            <div>
+                                <ul class="receive1"></ul>
+                                <a class="link" id="theAddress" href="javascript:void(0)">
+                                    <i></i>
+                                    使用新地址
+                                </a>
+                            </div>
+                            <div id="customDelivery">
+                                <div id="customDelivery" style="display:none;">
+                                    <a class="link selectedConsignee" style="cursor:pointer; display:none">选择配送地址</a>
+                                    <div class="pickup">
+                                        <h4>到自提点自取</h4>
+                                        <ul class="pickup-addr"></ul>
+                                        <div class="consignee-info">
+                                            <span>提货人：<input id="" type="text" class="input"
+                                                    name="Custom-ConsigneeName"></span>
+                                            <span>电话：<input id="" type="text" class="input"
+                                                    name="Custom-ConsigneePhone"></span>
+                                        </div>
+                                        <div class="pickup-agree"><input type="checkbox" checked="checked">我已阅读并同意<a
+                                                data-toggle="modal" data-backdrop="static" href="#myModal3"
+                                                class="selected" style="text-decoration: underline;">《易果生鲜自提服务协议》</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 配送信息 -->
+                    <div class="order-mode complete" id="order2">
+                        <h3>
+                            <i class="o-i-delivery"></i>
+                            配送信息
+                        </h3>
+                        <div class="o-delivery">
+                            <div style="color: red;">请选择收货信息后确认送货时间！</div>
+                        </div>
+                    </div>
+                    <!-- 支付信息 -->
+                    <div class="order-mode" id="order3">
+                        <h3>
+                            <i class="o-i-payment"></i>
+                            支付信息
+                        </h3>
+                        <div class="o-payment">
+                            <div style="color: red;">请选择收货信息后确认支付方式！</div>
+                        </div>
+                    </div>
+                    <!-- 发票信息 -->
+                    <div class="order-mode" id="order4">
+                        <h3>
+                            <i class="o-i-invoice"></i>
+                            发票信息
+                        </h3>
+                        <div class="o-invoice">
+                            <label for="">
+                                <input type="checkbox">需要发票
+                                <div class="promptbox">
+                                    <span>温馨提示</span>
+                                    <div class="dorpdown">
+                                        <i class="up"></i>
+                                        <p class="center">
+                                            <strong>温馨提示</strong>
+                                        </p>
+                                        <p>尊敬的顾客：</p>
+                                        <p>
+
+                                            按照国家有关税收法律法规，在您购买应税货物或接受应税服务的同时，有权索取增值税发票。
+                                            如您为自然人以外的单位或个体工商户，符合规定条件的,索取增值税专用发票时，应向我们提供购买方名称、纳税人识别号、地址电话、开户行及账号信息等四项信息，不需相关证件或其他证明材料。
+                                            您在索取增值税普通发票时，不需提供相关证件或其他证明材料。
+
+                                        </p>
+                                        <p class="mt10"></p>
+                                        <p>主管税务机关投诉举报电话： 12366</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="o-invoice-item" style="display: none;">
+                                <div class="tab">
+                                    发票类型：
+                                    <label class="selected" data-style="1">电子发票</label>
+                                    <div class="promptbox">
+                                        <span></span>
+                                        <div class="dorpdown" id="shuom">
+                                            <i></i>
+
+                                            1. 发票金额不含礼品卡支付和U币抵扣部分；
+                                            <br>
+
+                                            2. 按国家税务局规定，储值卡和充值卡仅开具“不征税”发票类型；
+                                            <br>
+
+                                            3. 电子发票确认收货后可在订单详情中查看；
+                                            <br>
+
+                                            注：电子发票是税务局认可的有效收付款凭证，其法律效力、基本用途及使用规定同纸质发票，如需纸质发票可自行下载电子发票并打印。
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab" style="display: none;">
+                                    <span>
+                                        发票内容：
+                                        <label class="j_item">食品</label>
+                                        <label class="j_item selected">水果</label>
+                                    </span>
+                                    <div class="j_content_invoice_msg">
+                                        <div class="mt15">
+                                            不征税发票：
+                                            <span class="green">购买的储值卡及充值返现订单仅可开具不征税发票</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    <a href="javascript:void(0)" class="link add-info">
+                                        <i></i>
+                                        新增发票信息
+                                    </a>
+                                </p>
+                                <div class="o-invoice-info" style="display: none;">
+                                    <p>发票类型：普通发票</p>
+                                    <p> 发票抬头：</p>
+                                    <div>
+                                        <input style="display: none;" id="theInvoiceTitle" type="text"
+                                            placeholder="请填写单位名称">
+                                        <input style="display: none;" id="theInvoiceTaxerNum" type="text"
+                                            placeholder="请填写纳税人识别号">
+                                    </div>
+                                    <p class="gray">
+                                        *应国税总局2017年第16号规定，开具增值税普通发票时，应在“购买方纳税人识别号”栏填写
+                                        <span class="red">购买方的纳税人识别号</span>
+                                        或
+                                        <span class="red">统一社会信用代码</span>
+                                        。
+                                        <br>
+                                        不符合规定的发票，不得作为税收凭证。
+                                    </p>
+                                    <p></p>
+                                </div>
+                                <p class="tip">* 按国家税务局规定，储值卡和充值订单仅可开具“不征税”发票类型。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 商品信息 -->
+                    <div class="order-mode" id="order5">
+                        <h3>
+                            <i class="o-i-commodity"></i>
+                            商品信息
+                            <a href="shopping.html" class="backcart">返回购物车>></a>
+                        </h3>
+                        <div class="o-commodity">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th width="590">商品名称</th>
+                                        <th>单价</th>
+                                        <th>数量</th>
+                                        <th>规格</th>
+                                        <th>金额小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="f-tbody">
+                                </tbody>
+                            </table>
+                            <div class="mt10 clearfix">
+                                <div class="f1">
+                                    补充说明：
+                                    <input type="text" id="txtWebRemark" placeholder="选填，补填要求">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 优惠券信息 -->
+                    <div class="order-mode" id="order6">
+                        <h3>
+                            <i class="o-i-voucher"></i>
+                            优惠券信息
+                        </h3>
+                        <div class="o-voucher">
+                            <div class="item">
+                                <div class="item-tit" style="cursor:pointer;"><i></i>使用优惠券 您当前订单共有&nbsp;
+                                    <span id="totalCount"
+                                        style="margin-left: 2px; color: #e4393c; font-family: verdana;">3</span>
+                                    &nbsp;张优惠券
+                                </div>
+                                <div class="item-wrap" style="display: none;">
+                                    <div class="tabbable">
+                                        <div class="sub-tit" style="cursor:pointer;"><i></i>使用悠悦会优惠券<span
+                                                id="youyuehuiCount"
+                                                style="margin-left: 2px; color: #e4393c; font-family: verdana;">(0)</span>
+                                        </div>
+                                        <div class="sub-wrap tab-content">
+                                            <div class="tab-pane clearfix">
+                                                <ul id="theyouyuehuiCoupon"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tabbable">
+                                        <div class="sub-tit" style="cursor:pointer;"><i></i>使用绑定账户优惠券<span
+                                                id="lotteryCount"
+                                                style="margin-left: 2px; color: #e4393c; font-family: verdana;">(3)</span>
+                                        </div>
+                                        <input type="hidden" id="hidden_verify" value="true">
+                                        <div class="sub-wrap tab-content">
+                                            <div class="tab-pane clearfix">
+                                                <ul id="theUserBindCoupon">
+                                                    <li class="giftcard"> <input type="radio" name="theUserCoupon"
+                                                            class="giftcard-radio"> <label>
+                                                            <div class="giftcard-box"> <span class="facevalue">减</span>
+                                                                <span
+                                                                    class="profile"><strong>【优惠券】</strong>新人好礼：全网满99减30元券(特殊商品及卡券除外）</span>
+                                                            </div>
+                                                            <div class="date">
+                                                                <span>券号：Q1706232791</span><span>截止日期：2019-10-25</span>
+                                                            </div>
+                                                        </label>
+                                                        <div class="hidval" style="display:none;"> <span
+                                                                id="LotteryCommodityId">b7ef0b0c-9e23-480f-b8d0-2c5e8fd3f61d</span>
+                                                            <span id="LotteryCommodityCode">Q1706232791</span> <span
+                                                                id="LotteryType">1</span> <span
+                                                                id="CommodityId">00000000-0000-0000-0000-000000000000</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="giftcard"> <input type="radio" name="theUserCoupon"
+                                                            class="giftcard-radio"> <label>
+                                                            <div class="giftcard-box"> <span class="facevalue">减</span>
+                                                                <span
+                                                                    class="profile"><strong>【优惠券】</strong>新人好礼：全网满188减50元券(特殊商品及卡券除外）</span>
+                                                            </div>
+                                                            <div class="date">
+                                                                <span>券号：Q1706232801</span><span>截止日期：2019-11-01</span>
+                                                            </div>
+                                                        </label>
+                                                        <div class="hidval" style="display:none;"> <span
+                                                                id="LotteryCommodityId">216e3656-c0ee-4885-b1cd-602401cff05d</span>
+                                                            <span id="LotteryCommodityCode">Q1706232801</span> <span
+                                                                id="LotteryType">1</span> <span
+                                                                id="CommodityId">00000000-0000-0000-0000-000000000000</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="giftcard"> <input type="radio" name="theUserCoupon"
+                                                            class="giftcard-radio"> <label>
+                                                            <div class="giftcard-box"> <span class="facevalue">减</span>
+                                                                <span
+                                                                    class="profile"><strong>【优惠券】</strong>专场满199减40（仅部分商品可用）</span>
+                                                            </div>
+                                                            <div class="date">
+                                                                <span>券号：Q1910172155</span><span>截止日期：2019-10-23</span>
+                                                            </div>
+                                                        </label>
+                                                        <div class="hidval" style="display:none;"> <span
+                                                                id="LotteryCommodityId">bac863a3-f26c-4284-8cfa-ab79af64f9c8</span>
+                                                            <span id="LotteryCommodityCode">Q1910172155</span> <span
+                                                                id="LotteryType">1</span> <span
+                                                                id="CommodityId">00000000-0000-0000-0000-000000000000</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                <ul id="theUserBindCoupon_0"></ul>
+                                                <ul id="theUserBindCoupon_128"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="sub-tit" style="cursor:pointer;"><i></i>手工输入优惠券</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item-tit" style="cursor:pointer;"><i></i>使用现金券</div>
+                                <div class="item-wrap" style="display: none;">
+                                    现金券券号：<input id="txtCashVoucher" type="text" class="input" placeholder="请输入现金券券号">
+                                    密码：<input id="txtCashVoucherPwd" type="password" class="input-yzm"
+                                        placeholder="请输入密码">
+                                    <a class="btn-green use-voucher" id="btnManualCashVoucher">绑定</a>
+                                    <p class="green mt10">用券必读：现金券不设找零，一张券仅限使用一次</p>
+                                    <div id="posManualCashVoucher" class="give-seleceed" style="display: block;">
+                                        <div class="tab-pane cash_coupon clearfix">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="orderPlus" class="order-mode-last">
+                        <h3>
+                            <i class="o-i-order"></i>
+                            订货人信息
+                        </h3>
+                        <div class="o-order">
+                            <div>
+                                订货人姓名：
+                                <input id="OrderUserName" type="text" class="input" placeholder="非必填" maxlength="20">
+                            </div>
+                            <div>
+                                订货人手机：
+                                <input id="OrderUserMobile" type="text" class="input" placeholder="非必填" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="order7" class="statistic">
+                        <p class="right">商品金额：￥
+                            <span>30.00</span>
+                        </p>
+                        <p class="right">运费：￥
+                            <span>10.00</span>
+                        </p>
+                        <p class="right">礼品卡支付：￥-
+                            <span>0.00</span>
+                        </p>
+                        <p class="right">优惠金额：￥-
+                            <span>0.00</span>
+                        </p>
+                        <p class="right">悠币：
+                            <span>0.00</span>
+                        </p>
+                    </div>
+                    <div class="settle-space"></div>
+                    <div id="order71" class="cart-footer clearfix">
+                        <div class="order71-wrap">
+                            <div class="right">
+                                <span class="none">运费：<em>￥</em><em>10.00</em>元</span>
+                                <span class="none">商品金额：<em>￥</em><em class="f-toatal">30.00</em>元</span>
+                                <span class="fs14">应付款：<em>￥</em><em class="f-total">40.00</em></span>
+                                <a id="btnOrderSubmit" href="payment.html" class="btn"
+                                    style="background-color: rgb(255, 83, 23);">提交订单</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="count-address" style="display:none">
+            <div class="modal fade in" id="myModal1" style="display:none">
+                <div class="modal-header">
+                    <a class="close" data-dismiss="modal">×</a>
+                    <h3><i class="i-newaddr"></i>使用新地址</h3>
+                </div>
+                <div class="modal-body">
+                    <form id="theAddressForm" name="theAddressForm" method="post">
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">收货人姓名：</label>
+                            <div class="controls">
+                                <input type="hidden" name="ConsigneeId" id="ConsigneeId">
+                                <input type="text" class="input-l" name="ConsigneeName" id="ConsigneeName">
+                                <label for="ConsigneeName" class="error" hidden> * 收货人姓名必填</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">手机号码：</label>
+                            <div class="controls">
+                                <input id="ConsigneeMobile" name="ConsigneeMobile" type="text" class="input-l"
+                                    placeholder="">
+                                <input id="OrigonMobile" name="OrigonMobile" type="text" class="input-l" placeholder=""
+                                    hidden>
+                                <label for="ConsigneeMobile" generated="true" hidden class="error"> * 手机号码必填</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">收货地址：</label>
+                            <div class="controls">
+                                <select id="ProvinceId" name="ProvinceId">
+                                    <option>请选择</option>
+                                </select>
+                                <select id="AreaId" name="AreaId">
+                                    <option>请选择</option>
+                                </select>
+                                <label for="AreaId" generated="true" hidden class="error"> * 必选</label>
+                                <select id="DistrictId" name="DistrictId">
+                                    <option value="">请选择</option>
+                                </select>
+                                <label for="DistrictId" generated="true" hidden class="error"> * 必选</label>
+                                <input type="hidden" id="IsOuterLoop" name="IsOuterLoop">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">详细地址：</label>
+                            <div class="controls">
+                                <input id="ConsigneeAddress" name="ConsigneeAddress" type="text" class="input-xl">
+                                <label for="ConsigneeAddress" generated="true" class="error" hidden> * 详细地址必填</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">固定电话：</label>
+                            <div class="controls">
+                                <input id="ConsigneeTel" name="ConsigneeTel" type="text" class="input-l" placeholder="">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea">邮政编码：</label>
+                            <div class="controls"><input id="PostCode" name="PostCode" type="text" class="input-m">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea"></label>
+                            <div class="controls">
+                                <label class="adrtag" data-type="2">家庭地址
+                                    <b></b>
+                                </label>
+                                <label class="adrtag" data-type="1">公司地址
+                                    <b></b>
+                                </label>
+                                <input id="ConsigneeType" name="ConsigneeType" type="hidden" value="">
+                                <label for="ConsigneeType" generated="true" class="error" hidden>* 请选择收货地址类型</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="textarea"></label>
+                            <div class="controls">
+                                <input id="btnSaveConsignee" type="button" class="btn-save" value="保存"
+                                    style="cursor:pointer;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="layer_global_main">
+            <div class="layer_global_title">
+                <h3> 提示 </h3>
+                <button type="button"></button>
+            </div>
+            <div class="layer_global_cont layer_cont_15">
+                <div class="layer_global_mod">
+                    <b class="icon icon_msg4 icon_msg4_warn"></b>
+                    <h4 class="layer_global_tit">请确认删除？</h4>
+                    <div class="wrap_btn">
+                        <div class="btn_strong" style="background: #008842;">删除</div>
+                        <div class="btn_strong" style="color: #008842;">取消</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="msg-shadow"></div>
+        <div class="modal fade in" id="myModal2" style="display: none">
+            <div class="modal-header">
+                <a id="theTimecolse" class="close" data-dismiss="modal">×</a>
+                <h3><i class="i-slctime"></i>选择收货时间</h3>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="left">时间段</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>全天09:00-21:00</td>
+                            <td class="selected">
+                                <a href="#">已选</a>
+                                <b></b>
+                            </td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                            <td><a href="###">可选</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>若由于我方原因未能及时送到，将免除此单运费</p>
+                <span class="selectCustomDeliveryTips"
+                    style="display:none;margin-top: 20px;line-height: 40px;color: #777;">因生鲜产品特殊性，请您在选定日期的工作时间内到您选择的自提点提货，以免逾期影响商品品质或口感。</span>
+            </div>
+        </div>
+    </div>
+
+    <!--底部  -->
+    <div class="footer_service footer_service1">
+        <div class="footer_service_wrap">
+            <ul>
+                <li>
+                    <i class="icon icon1"></i>
+                    <b>全球精选</b>
+                    <span>一站式生鲜购物方式</span>
+                </li>
+                <li>
+                    <i class="icon icon2"></i>
+                    <b>多仓直发</b>
+                    <span>次日达配送服务</span>
+                </li>
+                <li>
+                    <i class="icon icon3"></i>
+                    <b>品质严选</b>
+                    <span>精选正宗品质好食材</span>
+                </li>
+                <li>
+                    <i class="icon icon4"></i>
+                    <b>天天低价</b>
+                    <span>会员专属优惠购不停</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap">
+            <div class="col">
+                <span><i class="warp-icon warp-icon1"></i>新手指南</span>
+                <ul>
+                    <li><a href="footer1.html">账户注册</a></li>
+                    <li><a href="footer2.html">购物流程</a></li>
+                    <li><a href="footer3.html">订购方式</a></li>
+                    <li><a href="footer4.html">悠币说明</a></li>
+                    <li><a href="vip.html">会员等级</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <span><i class="warp-icon warp-icon2"></i>付款方式</span>
+                <ul>
+                    <li><a href="footer6.html">支付方式</a>/
+                        <a href="footer7.html">发票说明</a>
+                    </li>
+                    <li><a href="footer9.html">礼品卡章程</a></li>
+                    <li><a href="footer10.html">优惠代码</a></li>
+                    <li><a href="footer11.html">卡券购买章程</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <span><i class="warp-icon warp-icon3"></i>配送方式</span>
+                <ul>
+                    <li><a href="footer12.html">配送运费</a></li>
+                    <li><a href="footer13.html">时间及范围</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <span><i class="warp-icon warp-icon4"></i>售后服务</span>
+                <ul>
+                    <li><a href="footer15.html">退换货政策</a></li>
+                    <li><a href="footer16.html">退换货流程</a></li>
+                    <li><a href="footer17.html">常见问题</a></li>
+                    <li><a href="footer18.html">极速退款</a></li>
+                    <li><a class="suggest" date-list="14" href="javascript:void(0)">投诉与建议</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <span><i class="warp-icon warp-icon5"></i>关于我们</span>
+                <ul>
+                    <li><a href="footer20.html">公司介绍</a></li>
+                    <li><a href="footer21.html">联系我们</a></li>
+                    <li><a href="footer22.html">业务合作</a></li>
+                    <li><a href="footer23.html">诚信举报</a></li>
+                    <li><a href="footer24.html">用户协议</a></li>
+                    <li><a href="footer25.html">隐私协议</a></li>
+                    <li><a href="footer26.html">友情链接</a></li>
+                </ul>
+            </div>
+            <div class="service">
+                <span>客服热线 400-000-7788 企业采购或团购，请转2号键咨询</span>
+                <span>周一至周日 9:00-21:00</span>
+            </div>
+            <div class="copyright">
+                <p>
+                    所有图片均受著作权保护，未经许可任何单位与个人不得使用、复制、转载、摘编，违者必究法律责任。
+                </p>
+                <p>
+                    <a href="javascript:void(0)">沪ICP备09008015号</a>
+                    Copyright © 2005-2019
+                    <a href="javascript:void(0)"></a>
+                    版权所有
+                </p>
+                <p class="copyright_p">
+                    <a href="https://scjgj.sh.gov.cn/platform/survey/step1_phone">
+                        <img src="http://img05.yiguoimg.com/d/web/190617/00191/142933/ordermeal.png" alt="">
+                    </a>
+                    <a href="http://www.shjbzx.cn">
+                        <img src="http://img06.yiguoimg.com/d/web/190527/00191/172725/report.png" alt="">
+                    </a>
+                    <a href="http://www.shjbzx.cn">
+                        <img src="http://img06.yiguoimg.com/d/web/190510/00192/161235/wxb.png" alt="">
+                    </a>
+                    <a href="http://www.yiguo.com/legal">
+                        <img src="http://img07.yiguoimg.com/d/web/171208/00652/173249/153685368061665897_121x29.png"
+                            alt="">
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="https://img05.yiguoimg.com/d/web/190618/00191/143543/962110.png" alt="">
+                    </a>
+                    <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20110512114405424">
+                        <img class="copyright-img"
+                            src="http://img06.yiguoimg.com/d/web/181227/00281/143951/footer_copy.jpg" alt="">
+                    </a>
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010502000002">
+                        <img src="http://www.beian.gov.cn/file/ghs.png" alt="">
+                        <span class="copyright_span">沪公网安备 31010502000002号</span>
+                    </a>
+                </p>
+                <p>
+                    违法和不良信息举报电话 400-000-7788
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="vip-side">
+        <ul>
+            <li><i class="s-btn"></i></li>
+            <li><i class="s-btn1"></i></li>
+        </ul>
+    </div> -->
+    <!-- 客服 -->
+    <div class="waiter">
+        <div class="waiter1">
+            <div class="waiter2">
+                <span class="waiter-span">一</span>
+                <span class="waiter-span1 waiter-span">X</span>
+            </div>
+        </div>
+        <div class="waiter3">
+            <ul class="waiter12">
+                <li>
+                    <div class="waiter9">
+                        <img class="img1"
+                            src="https://gw.alicdn.com/tps/TB10C4vKXXXXXa_aXXXXXXXXXXX-420-420.jpg_200x200.jpg" alt="">
+                        <p class="data"></p>
+                        <i class="trilateral"></i>
+                        <p class="Conversation">易果欢迎您，请问有什么可以为您服务？</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="waiter4">
+            <img class="waiter4-img" src="https://gw.alicdn.com/tps/TB1n_7TKFXXXXbBXVXXXXXXXXXX-50-50.png" alt="">
+            <img class="waiter4-img" src="https://gw.alicdn.com/tps/TB1Dgo5KFXXXXa1XFXXXXXXXXXX-50-50.png" alt="">
+        </div>
+        <div class="waiter5">
+            <textarea id="J_wkitTextarea" class="wkit-textarea" placeholder="说点什么吧..."></textarea>
+            <button class="wkit-msg-send-btn" id="J_wkitMsgSendBtn">发送</button>
+        </div>
+        <a href="javascript:void(0)" class="waiter6"><span class="my">我的</span></a>
+        <div class="waiter7">
+            <div> <img class="waiter8" src="http://yunwang.yiguo.com/content/images/pic.jpg" alt=""> </div>
+            <div class="waiter10">
+                <p class="phone">15001835276</p>
+                <p class="phone">易果生鲜普通用户</p>
+                <p class="phone">悠币: 110</p>
+                <p class="phone">优惠券: <span class="waiter-span2"> 3 </span>张</p>
+            </div>
+        </div>
+        <div class="waiter-wrapper">
+            <p class="hotspot">大家都在看：</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide waiter-list">
+                        <div class="waiter-img">
+                            <a href="">
+                                <img src="http://img11.yiguoimg.com/d/items/2019/191014/9288739332073294_300.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <p class="waiter-p">
+                            <a href="">养乐多活菌型乳酸菌乳饮品100ml*5</a>
+                        </p>
+                        <p class="waiter-money">
+                            <span class="red">¥12.9</span>
+                            <span class="grey">￥12.90</span>
+                        </p>
+                    </div>
+                    <div class="swiper-slide waiter-list">
+                        <div class="waiter-img">
+                            <a href="">
+                                <img src="http://img09.yiguoimg.com/d/items/2018/180613/9288724483253453_300.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <p class="waiter-p">
+                            <a href="">美威欧式原味三文鱼排（2片装）250g</a>
+                        </p>
+                        <p class="waiter-money">
+                            <span class="red">¥62.9</span>
+                            <span class="grey">￥62.90</span>
+                        </p>
+                    </div>
+                    <div class="swiper-slide waiter-list">
+                        <div class="waiter-img">
+                            <a href="">
+                                <img src="http://img07.yiguoimg.com/e/web/170118/150234/170118150234302_1233566_300.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <p class="waiter-p">
+                            <a href="">澳洲谷饲小公牛雪花牛肉粒250g</a>
+                        </p>
+                        <p class="waiter-money">
+                            <span class="red">¥58</span>
+                            <span class="grey">￥58.00</span>
+                        </p>
+                    </div>
+                    <div class="swiper-slide waiter-list">
+                        <div class="waiter-img">
+                            <a href="">
+                                <img src="http://img07.yiguoimg.com/e/web/170508/095120/170508095120808_154370_300.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <p class="waiter-p">
+                            <a href=""> 崇明生态乳鸽300g</a>
+                        </p>
+                        <p class="waiter-money">
+                            <span class="red">¥49.9</span>
+                            <span class="grey">￥49.90</span>
+                        </p>
+                    </div>
+                    <div class="swiper-slide waiter-list">
+                        <div class="waiter-img">
+                            <a href="">
+                                <img src="http://img11.yiguoimg.com/d/items/2018/180309/9288720080970857_300.jpg"
+                                    alt="">
+                            </a>
+                        </div>
+                        <p class="waiter-p">
+                            <a href="">延世牧场牛奶RT1L*2g</a>
+                        </p>
+                        <p class="waiter-money">
+                            <span class="red">¥78.8</span>
+                            <span class="grey">￥78.80</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <span class="swiper-pagination"></span>
+            </div>
+        </div>
+    </div>     -->
+        <script src="js/countMoney.js"></script>
+        <script src="js/base.js"></script>
+        <script src="js/sidetop.js"></script>
+        <script src="js/swiper.min.js"></script>
+        <script src="js/swiper.animate.min.js"></script>
+</body>
+
+</html>
